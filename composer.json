@@ -18,5 +18,10 @@
     "require": {
         "phpfastcache/phpfastcache": "v8.x-dev",
         "endroid/qr-code": "^4.6"
+    },
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
     }
+
 }
