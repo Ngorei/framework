@@ -1,6 +1,6 @@
 {
     "name": "tatiye/ngorei",
-    "description": "Ngorei App",
+    "description": "Ngorei - framework",
     "license": "MIT",
     "autoload": {
         "psr-4": {
