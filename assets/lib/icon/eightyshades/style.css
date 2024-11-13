@@ -1,0 +1,275 @@
+@font-face {
+	font-family: 'eightyshades';
+	src:url('fonts/eightyshades.eot');
+	src:url('fonts/eightyshades.eot?#iefix') format('embedded-opentype'),
+		url('fonts/eightyshades.woff') format('woff'),
+		url('fonts/eightyshades.ttf') format('truetype'),
+		url('fonts/eightyshades.svg#eightyshades') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'eightyshades';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.aicon-store:before, .aicon-out:before, .aicon-in:before, .aicon-in-alt:before, .aicon-home:before, .aicon-light-bulb:before, .aicon-anchor:before, .aicon-feather:before, .aicon-expand:before, .aicon-maximize:before, .aicon-search:before, .aicon-zoom-in:before, .aicon-zoom-out:before, .aicon-add:before, .aicon-subtract:before, .aicon-exclamation:before, .aicon-question:before, .aicon-close:before, .aicon-cmd:before, .aicon-forbid:before, .aicon-forbid-2:before, .aicon-spinner:before, .aicon-play:before, .aicon-stop:before, .aicon-pause:before, .aicon-forward:before, .aicon-rewind:before, .aicon-sound:before, .aicon-sound-alt:before, .aicon-sound-off:before, .aicon-task:before, .aicon-inbox:before, .aicon-inbox-alt:before, .aicon-envelope:before, .aicon-compose:before, .aicon-newspaper:before, .aicon-newspaper-alt:before, .aicon-clipboard:before, .aicon-calendar:before, .aicon-hyperlink:before, .aicon-trash:before, .aicon-trash-alt:before, .aicon-grid:before, .aicon-grid-alt:before, .aicon-menu:before, .aicon-list:before, .aicon-gallery:before, .aicon-calculator:before, .aicon-windows:before, .aicon-browser:before, .aicon-alarm:before, .aicon-clock:before, .aicon-attachment:before, .aicon-settings:before, .aicon-portfolio:before, .aicon-user:before, .aicon-users:before, .aicon-heart:before, .aicon-chat:before, .aicon-comments:before, .aicon-screen:before, .aicon-iphone:before, .aicon-ipad:before, .aicon-fork-and-spoon:before, .aicon-fork-and-knife:before, .aicon-instagram:before, .aicon-facebook:before, .aicon-delicious:before, .aicon-googleplus:before, .aicon-dribbble:before, .aicon-pin:before, .aicon-pin-alt:before, .aicon-camera:before, .aicon-brightness:before, .aicon-brightness-half:before, .aicon-moon:before, .aicon-cloud:before, .aicon-circle-full:before, .aicon-circle-half:before, .aicon-globe:before {
+	font-family: 'eightyshades';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.aicon-store:before {
+	content: "\e000";
+}
+.aicon-out:before {
+	content: "\e001";
+}
+.aicon-in:before {
+	content: "\e002";
+}
+.aicon-in-alt:before {
+	content: "\e003";
+}
+.aicon-home:before {
+	content: "\e004";
+}
+.aicon-light-bulb:before {
+	content: "\e005";
+}
+.aicon-anchor:before {
+	content: "\e006";
+}
+.aicon-feather:before {
+	content: "\e007";
+}
+.aicon-expand:before {
+	content: "\e008";
+}
+.aicon-maximize:before {
+	content: "\e009";
+}
+.aicon-search:before {
+	content: "\e00a";
+}
+.aicon-zoom-in:before {
+	content: "\e00b";
+}
+.aicon-zoom-out:before {
+	content: "\e00c";
+}
+.aicon-add:before {
+	content: "\e00d";
+}
+.aicon-subtract:before {
+	content: "\e00e";
+}
+.aicon-exclamation:before {
+	content: "\e00f";
+}
+.aicon-question:before {
+	content: "\e010";
+}
+.aicon-close:before {
+	content: "\e011";
+}
+.aicon-cmd:before {
+	content: "\e012";
+}
+.aicon-forbid:before {
+	content: "\e013";
+}
+.aicon-forbid-2:before {
+	content: "\e014";
+}
+.aicon-spinner:before {
+	content: "\e015";
+}
+.aicon-play:before {
+	content: "\e016";
+}
+.aicon-stop:before {
+	content: "\e017";
+}
+.aicon-pause:before {
+	content: "\e018";
+}
+.aicon-forward:before {
+	content: "\e019";
+}
+.aicon-rewind:before {
+	content: "\e01a";
+}
+.aicon-sound:before {
+	content: "\e01b";
+}
+.aicon-sound-alt:before {
+	content: "\e01c";
+}
+.aicon-sound-off:before {
+	content: "\e01d";
+}
+.aicon-task:before {
+	content: "\e01e";
+}
+.aicon-inbox:before {
+	content: "\e01f";
+}
+.aicon-inbox-alt:before {
+	content: "\e020";
+}
+.aicon-envelope:before {
+	content: "\e021";
+}
+.aicon-compose:before {
+	content: "\e022";
+}
+.aicon-newspaper:before {
+	content: "\e023";
+}
+.aicon-newspaper-alt:before {
+	content: "\e024";
+}
+.aicon-clipboard:before {
+	content: "\e025";
+}
+.aicon-calendar:before {
+	content: "\e026";
+}
+.aicon-hyperlink:before {
+	content: "\e027";
+}
+.aicon-trash:before {
+	content: "\e028";
+}
+.aicon-trash-alt:before {
+	content: "\e029";
+}
+.aicon-grid:before {
+	content: "\e02a";
+}
+.aicon-grid-alt:before {
+	content: "\e02b";
+}
+.aicon-menu:before {
+	content: "\e02c";
+}
+.aicon-list:before {
+	content: "\e02d";
+}
+.aicon-gallery:before {
+	content: "\e02e";
+}
+.aicon-calculator:before {
+	content: "\e02f";
+}
+.aicon-windows:before {
+	content: "\e030";
+}
+.aicon-browser:before {
+	content: "\e031";
+}
+.aicon-alarm:before {
+	content: "\e032";
+}
+.aicon-clock:before {
+	content: "\e033";
+}
+.aicon-attachment:before {
+	content: "\e034";
+}
+.aicon-settings:before {
+	content: "\e035";
+}
+.aicon-portfolio:before {
+	content: "\e036";
+}
+.aicon-user:before {
+	content: "\e037";
+}
+.aicon-users:before {
+	content: "\e038";
+}
+.aicon-heart:before {
+	content: "\e039";
+}
+.aicon-chat:before {
+	content: "\e03a";
+}
+.aicon-comments:before {
+	content: "\e03b";
+}
+.aicon-screen:before {
+	content: "\e03c";
+}
+.aicon-iphone:before {
+	content: "\e03d";
+}
+.aicon-ipad:before {
+	content: "\e03e";
+}
+.aicon-fork-and-spoon:before {
+	content: "\e03f";
+}
+.aicon-fork-and-knife:before {
+	content: "\e040";
+}
+.aicon-instagram:before {
+	content: "\e041";
+}
+.aicon-facebook:before {
+	content: "\e042";
+}
+.aicon-delicious:before {
+	content: "\e043";
+}
+.aicon-googleplus:before {
+	content: "\e044";
+}
+.aicon-dribbble:before {
+	content: "\e045";
+}
+.aicon-pin:before {
+	content: "\e046";
+}
+.aicon-pin-alt:before {
+	content: "\e047";
+}
+.aicon-camera:before {
+	content: "\e048";
+}
+.aicon-brightness:before {
+	content: "\e049";
+}
+.aicon-brightness-half:before {
+	content: "\e04a";
+}
+.aicon-moon:before {
+	content: "\e04b";
+}
+.aicon-cloud:before {
+	content: "\e04c";
+}
+.aicon-circle-full:before {
+	content: "\e04d";
+}
+.aicon-circle-half:before {
+	content: "\e04e";
+}
+.aicon-globe:before {
+	content: "\e04f";
+}

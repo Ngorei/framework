@@ -1,0 +1,34 @@
+[{
+    "id": "editor",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "editor",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"form",
+        "body":{
+            "elementById": "myFrom",
+             "upItem": true,
+             "type": "Form",
+             "status": "update",
+             "cradensial": "1A40D-5C079-FAFC4-2AC9B",
+             "action": {
+                 "title":     ["text",12,"Email","Enter your ","left","icon-user",3],
+                 "deskripsi": ["texteditor",  12, "Deskripsi", "Enter your ", "left", "fa fa-user", 200]
+             },
+            "quill" :{
+                  "elementById" :"deskripsi",
+                  "placeholder" :"Editor...",
+                  "type"        :"basic"
+            },
+             "footer": {
+                 "save": ["Simpan","success ml-2 btn-xs"],
+                 "cancel": ["Batalkan","outline-light btn-xs"],
+                 "class": "text-right pt-50px"
+             }
+          }
+     }
+}
+
+]

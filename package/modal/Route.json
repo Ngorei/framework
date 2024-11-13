@@ -1,0 +1,20 @@
+[{
+    "id": "Route",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "myRoute",
+        "title": "Open Modal Route",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Route",
+        "element":{
+         "sizes":"standard", 
+         "animation":false
+         },
+        "body":{
+          "public":"#exsampel/content", 
+          "data":"row"
+          }
+     }
+}
+]

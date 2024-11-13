@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pivot Demo</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="assets/pivottable/dist/pivot.css">
+        <script type="text/javascript" src="assets/pivottable/dist/pivot.js"></script>
+
+        <style>
+            body {font-family: Verdana;}
+        </style>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+        var formData = {
+            action: 'fetchDataAppNews',
+            bring: 'nothing'
+        };
+
+        var formDataString = $.param(formData)
+
+        $.ajax({
+            url: 'http://htdoc/pivot-table/backend/response.php',
+            type: 'POST',
+            dataType: 'json',
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: formDataString,
+            success: function(response) {
+                console.log(response.data)
+                $("#output").pivotUI(response.data);
+            },
+            error: err => console.log(err)
+        });
+
+        </script>
+        <div id="output" style="margin: 30px;"></div>
+
+    </body>
+</html>

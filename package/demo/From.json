@@ -1,0 +1,29 @@
+[{
+    "id": "mdForm",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "mdForm",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"form",
+        "body":{
+            "elementById": "myFrom",
+             "upItem": true,
+             "type": "Drive",
+             "status": "insert",
+             "cradensial": "E8267-44D0E-7F73A-91CA6",
+             "action": {
+                 "title":     ["text",12,"Email","Enter your ","left","icon-user",3],
+                 "deskripsi": ["text",12,"deskripsi","Enter your ","left","icon-event",3]
+             },
+             "footer": {
+                 "save": ["Simpan","success ml-2 btn-xs"],
+                 "cancel": ["Batalkan","outline-light btn-xs"],
+                 "class": "text-right"
+             }
+          }
+     }
+}
+
+]

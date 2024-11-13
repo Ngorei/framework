@@ -1,0 +1,34 @@
+[{
+    "id": "Upload",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Upload",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Drive",
+        "body":{
+            "elementById": "Drive",
+             "upItem": true,
+             "type": "Drive",
+             "status": "insert",
+             "cradensial": "BE96A-0A2AB-3F61B-956D1",
+             "action": {
+                 "thumbnail": ["file",12,"deskripsi","Enter your ","left","icon-event",3],
+                 "title":     ["text",12,"Email","Enter your ","left","icon-user",3],
+                 "deskripsi": ["texteditor",  12, "Deskripsi", "Enter your ", "left", "fa fa-user", 2]
+             },
+            "quill" :{
+                  "elementById" :"deskripsi",
+                  "placeholder" :"Editor...",
+                  "type"        :"basic"
+            },
+             "footer": {
+                 "save": ["Simpan","success ml-2 btn-xs"],
+                 "cancel": ["Batalkan","outline-light btn-xs"],
+                 "class": "text-right pt-40px"
+             }
+          }
+     }
+}
+]

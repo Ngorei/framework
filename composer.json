@@ -1,0 +1,22 @@
+{
+    "name": "tatiye/ngorei",
+    "description": "Ngorei App",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+          "app\\": "app/helpers/",
+          "public\\": "public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tatiye",
+            "email": "info@tatiye.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpfastcache/phpfastcache": "v8.x-dev",
+        "endroid/qr-code": "^4.6"
+    }
+}

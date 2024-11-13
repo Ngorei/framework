@@ -1,0 +1,105 @@
+[
+{
+    "id": "Office",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Office",
+        "title": "Office",
+        "backdrop":false,
+        "backdropColor":false,
+        "model":"Office",
+        "element":{
+           "sizes":"300px", 
+           "animation":false
+         },
+        "body":{
+          "public":false, 
+          "data":false
+          }
+     }
+},
+ {
+    "id": "uploadnews",
+    "key": "5272E-23DB0-56C88-18503",
+    "modal": {
+        "elementById": "uploadnews",
+        "title": "Berita",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Drive",
+        "element":{
+             "sizes":"500px",
+             "animation":false
+         },
+        "body":{
+            "elementById": "Drive",
+             "upItem": true,
+             "type": "Drive",
+             "status": "insert",
+             "cradensial": "CE8D4-88842-4B001-125AD",
+             "action": {
+                 "thumbnail":["file",12,"File","Enter your ","left","icon-event",3],
+                 "title"    :["text",8,"Judul berita","Enter your ","left","icon-feather-book",3],
+                 "topik"    :["select",4, "Topik", false, "left", "icon-feather-bookmark",
+                        [
+                            {"label": "Pemerintahan", "value": "Pemerintahan"},
+                            {"label": "Ekonomi", "value": "Ekonomi"},
+                            {"label": "Infrastruktur", "value": "Infrastruktur"},
+                            {"label": "Kependudukan", "value": "Kependudukan"},
+                            {"label": "Kesehatan", "value": "Kesehatan"},
+                            {"label": "Pendidikan", "value": "Pendidikan"},
+                            {"label": "Kemiskinan", "value": "Kemiskinan"},
+                            {"label": "Pariwisata", "value": "Pariwisata"},
+                            {"label": "Sosial", "value": "Sosial"},
+                            {"label": "Lingkungan Hidup", "value": "Lingkungan Hidup"}
+                        ]
+                    ],
+                 "dekripsi":["textarea",12,"Deskripsi berita","Enter your ","left","icon-feather-book",3]
+             },
+             "footer": {
+                 "save": ["Simpan","success ml-2 btn-xs"],
+                 "cancel": ["Batalkan","outline-light btn-xs"],
+                 "class": "text-right"
+             }
+          }
+     }
+},
+{
+    "id": "Properties",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Office",
+        "title": "Office",
+        "backdrop":false,
+        "backdropColor":false,
+        "model":"Route",
+        "element":{
+           "sizes":"500px", 
+           "animation":false
+         },
+        "body":{
+          "public":false, 
+          "data":false
+          }
+     }
+},
+{
+    "id": "onRoute",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "onRoute",
+        "title": "Open Modal Route",
+        "backdrop":false,
+        "backdropColor":false,
+        "model":"Route",
+        "element":{
+         "sizes":"360px", 
+         "animation":false
+         },
+        "body":{
+          "public":"#exsampel/content", 
+          "data":"row"
+          }
+     }
+}
+]

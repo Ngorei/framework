@@ -1,0 +1,27 @@
+[{
+    "id": "uploadStd",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "uploadStd",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Drive",
+        "body":{
+            "elementById": "Drive",
+             "upItem": true,
+             "type": "Drive",
+             "status": "insert",
+             "cradensial": "2178F-E4CD2-FD20C-6AAF7",
+             "action": {
+                 "thumbnail": ["file",12,"deskripsi","Enter your ","left","icon-event",3]
+             },
+             "footer": {
+                 "save": ["Simpan","success ml-2 btn-xs"],
+                 "cancel": ["Batalkan","outline-light btn-xs"],
+                 "class": "text-right pt-30px"
+             }
+          }
+     }
+}
+]

@@ -1,0 +1,20 @@
+[{
+    "id": "Terminal",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Terminal",
+        "title": "Terminal",
+        "backdrop":false,
+        "backdropColor":false,
+        "model":"Terminal",
+        "element":{
+           "sizes":"700px", 
+           "animation":false
+         },
+        "body":{
+          "public":false, 
+          "data":false
+          }
+     }
+}
+]

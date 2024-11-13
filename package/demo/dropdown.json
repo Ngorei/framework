@@ -1,0 +1,31 @@
+[
+{
+    "id": "dropdown",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "dropdown": {
+      "elementById": "drop",
+      "action": {
+          "1": ["Update Text",    "fa fa-pencil-square-o", "modal",  "mdForm"],
+          "2": ["Update Drive",   "fa fa-file-o",          "modal",  "Drive"],
+          "3": ["Route Page",     "fa fa-info-circle",     "modal",  "Object"],
+          "4": ["Delete",         "fa fa-trash",           "modal",  "Drive","delete"],
+          "5": ["Recycle",        "fa fa-trash-o",         "modal",  "Drive","recycle"],
+          "6": ["Link Page",      "fa fa-info-circle",     "link",   "#elements/alerts"]
+      }
+     }
+ },
+ {
+    "id": "dropouside",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "dropdown": {
+      "elementById": "drop",
+      "action": {
+          "1": ["Update Text",   "fa fa-pencil-square-o",  "outside", "myFrom"],
+          "3": ["Route Page",    "fa fa-info-circle",      "modal",   "Object"],
+          "4": ["Link Page",     "fa fa-info-circle",      "link",    "#elements/alerts"],
+          "5": ["Delete",        "fa fa-trash",            "outside", "myFrom","delete"],
+          "6": ["Recycle",       "fa fa-trash-o",          "outside", "myFrom","recycle"]
+      }
+     }
+ }
+]

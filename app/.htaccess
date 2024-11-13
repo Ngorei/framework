@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Menghapus ekstensi .php dari URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# Mengarahkan semua permintaan yang tidak cocok dengan file atau direktori yang ada ke public.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ public.php [L]
+RewriteRule . 404.html [L]
+
+
+
+

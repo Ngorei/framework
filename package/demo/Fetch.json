@@ -1,0 +1,23 @@
+[{
+    "id": "fetchID",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "model": "Content",
+    "type": "ES3",
+    "fetch": {
+       "endpoint"    :"FE01C-E2A7F-BAC8F-AFAED",
+       "elementById" :"fetchID",
+       "search"      :"searchInput",
+       "action"      :true,
+       "pagination"  :"pagination",
+       "content"     :"row",
+       "order"       :3,
+       "expire"      :1,
+        "data"       :{
+           "where":"",
+           "limit":22,
+           "order":"",
+           "content":"row2"
+       }
+     }
+ }
+]

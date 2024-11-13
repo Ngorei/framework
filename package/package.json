@@ -1,0 +1,958 @@
+{
+    "Drive": {
+        "id": "Drive",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Drive",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Drive",
+            "body": {
+                "elementById": "Drive",
+                "upItem": true,
+                "type": "Drive",
+                "status": "insert",
+                "cradensial": "BE96A-0A2AB-3F61B-956D1",
+                "action": {
+                    "thumbnail": [
+                        "file",
+                        12,
+                        "deskripsi",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ],
+                    "title": [
+                        "text",
+                        12,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "icon-user",
+                        3
+                    ],
+                    "deskripsi": [
+                        "texteditor",
+                        12,
+                        "Deskripsi",
+                        "Enter your ",
+                        "left",
+                        "fa fa-user",
+                        2
+                    ]
+                },
+                "quill": {
+                    "elementById": "deskripsi",
+                    "placeholder": "Editor...",
+                    "type": "basic"
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right pt-40px"
+                }
+            }
+        }
+    },
+    "dropdown": {
+        "id": "dropdown",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "dropdown": {
+            "elementById": "drop",
+            "action": {
+                "1": [
+                    "Update Text",
+                    "fa fa-pencil-square-o",
+                    "modal",
+                    "mdForm"
+                ],
+                "2": [
+                    "Update Drive",
+                    "fa fa-file-o",
+                    "modal",
+                    "Drive"
+                ],
+                "3": [
+                    "Route Page",
+                    "fa fa-info-circle",
+                    "modal",
+                    "Object"
+                ],
+                "4": [
+                    "Delete",
+                    "fa fa-trash",
+                    "modal",
+                    "Drive",
+                    "delete"
+                ],
+                "5": [
+                    "Recycle",
+                    "fa fa-trash-o",
+                    "modal",
+                    "Drive",
+                    "recycle"
+                ],
+                "6": [
+                    "Link Page",
+                    "fa fa-info-circle",
+                    "link",
+                    "#elements\/alerts"
+                ]
+            }
+        }
+    },
+    "dropouside": {
+        "id": "dropouside",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "dropdown": {
+            "elementById": "drop",
+            "action": {
+                "1": [
+                    "Update Text",
+                    "fa fa-pencil-square-o",
+                    "outside",
+                    "myFrom"
+                ],
+                "3": [
+                    "Route Page",
+                    "fa fa-info-circle",
+                    "modal",
+                    "Object"
+                ],
+                "4": [
+                    "Link Page",
+                    "fa fa-info-circle",
+                    "link",
+                    "#elements\/alerts"
+                ],
+                "5": [
+                    "Delete",
+                    "fa fa-trash",
+                    "outside",
+                    "myFrom",
+                    "delete"
+                ],
+                "6": [
+                    "Recycle",
+                    "fa fa-trash-o",
+                    "outside",
+                    "myFrom",
+                    "recycle"
+                ]
+            }
+        }
+    },
+    "editor": {
+        "id": "editor",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "editor",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "form",
+            "body": {
+                "elementById": "myFrom",
+                "upItem": true,
+                "type": "Form",
+                "status": "update",
+                "cradensial": "1A40D-5C079-FAFC4-2AC9B",
+                "action": {
+                    "title": [
+                        "text",
+                        12,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "icon-user",
+                        3
+                    ],
+                    "deskripsi": [
+                        "texteditor",
+                        12,
+                        "Deskripsi",
+                        "Enter your ",
+                        "left",
+                        "fa fa-user",
+                        200
+                    ]
+                },
+                "quill": {
+                    "elementById": "deskripsi",
+                    "placeholder": "Editor...",
+                    "type": "basic"
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right pt-50px"
+                }
+            }
+        }
+    },
+    "fetchID": {
+        "id": "fetchID",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "model": "Content",
+        "type": "ES3",
+        "fetch": {
+            "endpoint": "FE01C-E2A7F-BAC8F-AFAED",
+            "elementById": "fetchID",
+            "search": "searchInput",
+            "action": true,
+            "pagination": "pagination",
+            "content": "row",
+            "order": 3,
+            "expire": 1,
+            "data": {
+                "where": "",
+                "limit": 22,
+                "order": "",
+                "content": "row2"
+            }
+        }
+    },
+    "mdForm": {
+        "id": "mdForm",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "mdForm",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "form",
+            "body": {
+                "elementById": "myFrom",
+                "upItem": true,
+                "type": "Drive",
+                "status": "insert",
+                "cradensial": "E8267-44D0E-7F73A-91CA6",
+                "action": {
+                    "title": [
+                        "text",
+                        12,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "icon-user",
+                        3
+                    ],
+                    "deskripsi": [
+                        "text",
+                        12,
+                        "deskripsi",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+            }
+        }
+    },
+    "myFrom": {
+        "id": "myFrom",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "from": {
+            "elementById": "myFrom",
+            "upItem": true,
+            "type": "form",
+            "cradensial": "E8267-44D0E-7F73A-91CA6",
+            "action": {
+                "title": [
+                    "text",
+                    12,
+                    "Email",
+                    "Enter your ",
+                    "left",
+                    "icon-user",
+                    3
+                ],
+                "deskripsi": [
+                    "text",
+                    12,
+                    "deskripsi",
+                    "Enter your ",
+                    "left",
+                    "icon-event",
+                    3
+                ]
+            },
+            "footer": {
+                "save": [
+                    "Simpan",
+                    "success ml-2 btn-xs"
+                ],
+                "cancel": [
+                    "Batalkan",
+                    "outline-light btn-xs"
+                ],
+                "class": "text-right"
+            },
+            "delete": "FE01C-E2A7F-BAC8F-AFAED"
+        }
+    },
+    "Static": {
+        "id": "Static",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Static",
+            "title": "Open Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Static",
+            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatem, distinctio itaque."
+        }
+    },
+    "Static2": {
+        "id": "Static2",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Static",
+            "title": "Open Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Static",
+            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatem, distinctio itaque."
+        }
+    },
+    "uploadStd": {
+        "id": "uploadStd",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "uploadStd",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Drive",
+            "body": {
+                "elementById": "Drive",
+                "upItem": true,
+                "type": "Drive",
+                "status": "insert",
+                "cradensial": "2178F-E4CD2-FD20C-6AAF7",
+                "action": {
+                    "thumbnail": [
+                        "file",
+                        12,
+                        "deskripsi",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right pt-30px"
+                }
+            }
+        }
+    },
+    "Form": {
+        "id": "Form",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Form",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "form",
+            "body": {
+                "elementById": "myFrom",
+                "upItem": true,
+                "type": "form",
+                "status": "insert",
+                "cradensial": "E8267-44D0E-7F73A-91CA6",
+                "action": {
+                    "title": [
+                        "text",
+                        12,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "icon-user",
+                        3
+                    ],
+                    "deskripsi": [
+                        "text",
+                        12,
+                        "deskripsi",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+            }
+        }
+    },
+    "Object": {
+        "id": "Object",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "myRoute",
+            "title": "Open Modal Route",
+            "backdrop": false,
+            "backdropColor": false,
+            "model": "Route",
+            "element": {
+                "sizes": "standard",
+                "animation": false
+            },
+            "body": {
+                "public": "#exsampel\/object",
+                "data": "row"
+            }
+        }
+    },
+    "Office": {
+        "id": "Office",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Office",
+            "title": "Office",
+            "backdrop": false,
+            "backdropColor": false,
+            "model": "Office",
+            "element": {
+                "sizes": "300px",
+                "animation": false
+            },
+            "body": {
+                "public": false,
+                "data": false
+            }
+        }
+    },
+    "uploadnews": {
+        "id": "uploadnews",
+        "key": "5272E-23DB0-56C88-18503",
+        "modal": {
+            "elementById": "uploadnews",
+            "title": "Berita",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Drive",
+            "element": {
+                "sizes": "500px",
+                "animation": false
+            },
+            "body": {
+                "elementById": "Drive",
+                "upItem": true,
+                "type": "Drive",
+                "status": "insert",
+                "cradensial": "CE8D4-88842-4B001-125AD",
+                "action": {
+                    "thumbnail": [
+                        "file",
+                        12,
+                        "File",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ],
+                    "title": [
+                        "text",
+                        8,
+                        "Judul berita",
+                        "Enter your ",
+                        "left",
+                        "icon-feather-book",
+                        3
+                    ],
+                    "topik": [
+                        "select",
+                        4,
+                        "Topik",
+                        false,
+                        "left",
+                        "icon-feather-bookmark",
+                        [
+                            {
+                                "label": "Pemerintahan",
+                                "value": "Pemerintahan"
+                            },
+                            {
+                                "label": "Ekonomi",
+                                "value": "Ekonomi"
+                            },
+                            {
+                                "label": "Infrastruktur",
+                                "value": "Infrastruktur"
+                            },
+                            {
+                                "label": "Kependudukan",
+                                "value": "Kependudukan"
+                            },
+                            {
+                                "label": "Kesehatan",
+                                "value": "Kesehatan"
+                            },
+                            {
+                                "label": "Pendidikan",
+                                "value": "Pendidikan"
+                            },
+                            {
+                                "label": "Kemiskinan",
+                                "value": "Kemiskinan"
+                            },
+                            {
+                                "label": "Pariwisata",
+                                "value": "Pariwisata"
+                            },
+                            {
+                                "label": "Sosial",
+                                "value": "Sosial"
+                            },
+                            {
+                                "label": "Lingkungan Hidup",
+                                "value": "Lingkungan Hidup"
+                            }
+                        ]
+                    ],
+                    "dekripsi": [
+                        "textarea",
+                        12,
+                        "Deskripsi berita",
+                        "Enter your ",
+                        "left",
+                        "icon-feather-book",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+            }
+        }
+    },
+    "Properties": {
+        "id": "Properties",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Office",
+            "title": "Office",
+            "backdrop": false,
+            "backdropColor": false,
+            "model": "Route",
+            "element": {
+                "sizes": "500px",
+                "animation": false
+            },
+            "body": {
+                "public": false,
+                "data": false
+            }
+        }
+    },
+    "onRoute": {
+        "id": "onRoute",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "onRoute",
+            "title": "Open Modal Route",
+            "backdrop": false,
+            "backdropColor": false,
+            "model": "Route",
+            "element": {
+                "sizes": "360px",
+                "animation": false
+            },
+            "body": {
+                "public": "#exsampel\/content",
+                "data": "row"
+            }
+        }
+    },
+    "Route": {
+        "id": "Route",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "myRoute",
+            "title": "Open Modal Route",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Route",
+            "element": {
+                "sizes": "standard",
+                "animation": false
+            },
+            "body": {
+                "public": "#exsampel\/content",
+                "data": "row"
+            }
+        }
+    },
+    "Terminal": {
+        "id": "Terminal",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Terminal",
+            "title": "Terminal",
+            "backdrop": false,
+            "backdropColor": false,
+            "model": "Terminal",
+            "element": {
+                "sizes": "700px",
+                "animation": false
+            },
+            "body": {
+                "public": false,
+                "data": false
+            }
+        }
+    },
+    "Upload": {
+        "id": "Upload",
+        "key": "FE01C-E2A7F-BAC8F-AFAED",
+        "modal": {
+            "elementById": "Upload",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "Drive",
+            "body": {
+                "elementById": "Drive",
+                "upItem": true,
+                "type": "Drive",
+                "status": "insert",
+                "cradensial": "BE96A-0A2AB-3F61B-956D1",
+                "action": {
+                    "thumbnail": [
+                        "file",
+                        12,
+                        "deskripsi",
+                        "Enter your ",
+                        "left",
+                        "icon-event",
+                        3
+                    ],
+                    "title": [
+                        "text",
+                        12,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "icon-user",
+                        3
+                    ],
+                    "deskripsi": [
+                        "texteditor",
+                        12,
+                        "Deskripsi",
+                        "Enter your ",
+                        "left",
+                        "fa fa-user",
+                        2
+                    ]
+                },
+                "quill": {
+                    "elementById": "deskripsi",
+                    "placeholder": "Editor...",
+                    "type": "basic"
+                },
+                "footer": {
+                    "save": [
+                        "Simpan",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right pt-40px"
+                }
+            }
+        }
+    },
+    "myProfil": {
+        "id": "myProfil",
+        "key": "B0FAA-327A4-46C11-FEF72",
+        "from": {
+            "elementById": "myProfil",
+            "upItem": true,
+            "type": "form",
+            "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+            "action": {
+                "thumbnail": [
+                    "file",
+                    12,
+                    "Password",
+                    "Enter your ",
+                    "left",
+                    "fa fa-lock",
+                    3
+                ],
+                "nama": [
+                    "text",
+                    12,
+                    "Nama Lengkap",
+                    "Enter your ",
+                    "left",
+                    "fa fa-user",
+                    3
+                ],
+                "email": [
+                    "email",
+                    6,
+                    "Email",
+                    "Enter your ",
+                    "left",
+                    "fa fa-envelope-o",
+                    3
+                ],
+                "password": [
+                    "password",
+                    6,
+                    "Password",
+                    "Enter your ",
+                    "left",
+                    "fa fa-eye",
+                    3
+                ],
+                "telepon": [
+                    "phone",
+                    4,
+                    "No Telepon",
+                    "Enter your ",
+                    "left",
+                    "fa fa-phone",
+                    3
+                ],
+                "alamat": [
+                    "text",
+                    8,
+                    "Alamat",
+                    "Enter your ",
+                    "left",
+                    "fa fa-map-marker",
+                    3
+                ]
+            },
+            "footer": {
+                "save": [
+                    "Update",
+                    "success ml-2 btn-xs"
+                ],
+                "cancel": [
+                    "Batalkan",
+                    "outline-light btn-xs"
+                ],
+                "class": "text-right"
+            }
+        }
+    },
+    "mdProfil": {
+        "id": "mdProfil",
+        "key": "B0FAA-327A4-46C11-FEF72",
+        "modal": {
+            "elementById": "mdProfil",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "form",
+            "body": {
+                "elementById": "mdProfil",
+                "upItem": true,
+                "type": "Drive",
+                "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+                "action": {
+                    "thumbnail": [
+                        "file",
+                        12,
+                        "Password",
+                        "Enter your ",
+                        "left",
+                        "fa fa-lock",
+                        3
+                    ],
+                    "nama": [
+                        "text",
+                        12,
+                        "Nama Lengkap",
+                        "Enter your ",
+                        "left",
+                        "fa fa-user",
+                        3
+                    ],
+                    "email": [
+                        "email",
+                        6,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "fa fa-envelope-o",
+                        3
+                    ],
+                    "password": [
+                        "password",
+                        6,
+                        "Password",
+                        "Enter your ",
+                        "left",
+                        "fa fa-eye",
+                        3
+                    ],
+                    "telepon": [
+                        "phone",
+                        4,
+                        "No Telepon",
+                        "Enter your ",
+                        "left",
+                        "fa fa-phone",
+                        3
+                    ],
+                    "alamat": [
+                        "text",
+                        8,
+                        "Alamat",
+                        "Enter your ",
+                        "left",
+                        "fa fa-map-marker",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Update",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+            }
+        }
+    },
+    "mdSetelan": {
+        "id": "mdSetelan",
+        "key": "B0FAA-327A4-46C11-FEF72",
+        "modal": {
+            "elementById": "mdProfil",
+            "title": "From Modal",
+            "backdrop": "static",
+            "backdropColor": false,
+            "model": "form",
+            "body": {
+                "elementById": "mdProfil",
+                "upItem": true,
+                "type": "form",
+                "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+                "action": {
+                    "nama": [
+                        "text",
+                        12,
+                        "Nama Lengkap",
+                        "Enter your ",
+                        "left",
+                        "fa fa-user",
+                        3
+                    ],
+                    "email": [
+                        "email",
+                        6,
+                        "Email",
+                        "Enter your ",
+                        "left",
+                        "fa fa-envelope-o",
+                        3
+                    ],
+                    "password": [
+                        "password",
+                        6,
+                        "Password",
+                        "Enter your ",
+                        "left",
+                        "fa fa-eye",
+                        3
+                    ],
+                    "telepon": [
+                        "phone",
+                        4,
+                        "No Telepon",
+                        "Enter your ",
+                        "left",
+                        "fa fa-phone",
+                        3
+                    ],
+                    "alamat": [
+                        "text",
+                        8,
+                        "Alamat",
+                        "Enter your ",
+                        "left",
+                        "fa fa-map-marker",
+                        3
+                    ]
+                },
+                "footer": {
+                    "save": [
+                        "Update",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+            }
+        }
+    }
+}

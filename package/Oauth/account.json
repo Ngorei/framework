@@ -1,0 +1,103 @@
+[
+{
+    "id": "myProfil",
+    "key": "B0FAA-327A4-46C11-FEF72",
+    "from": {
+        "elementById": "myProfil",
+        "upItem": true,
+        "type": "form",
+        "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+        "action": {
+            "thumbnail" : ["file",     12, "Password", "Enter your ", "left", "fa fa-lock",3],
+            "nama"      : ["text", 12, "Nama Lengkap", "Enter your ", "left", "fa fa-user", 3],
+            "email"     : ["email", 6, "Email", "Enter your ", "left", "fa fa-envelope-o", 3],
+            "password"  : ["password", 6, "Password", "Enter your ", "left", "fa fa-eye", 3],
+            "telepon"   : ["phone", 4, "No Telepon", "Enter your ", "left", "fa fa-phone", 3],
+            "alamat"    : ["text", 8, "Alamat", "Enter your ", "left", "fa fa-map-marker", 3]
+        },
+        "footer": {
+            "save": [
+                "Update",
+                "success ml-2 btn-xs"
+            ],
+            "cancel": [
+                "Batalkan",
+                "outline-light btn-xs"
+            ],
+            "class": "text-right"
+        }
+    }
+},
+{
+    "id": "mdProfil",
+    "key": "B0FAA-327A4-46C11-FEF72",
+    "modal": {
+        "elementById": "mdProfil",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"form",
+        "body":{
+                "elementById": "mdProfil",
+                "upItem": true,
+                "type": "Drive",
+                "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+                "action": {
+                    "thumbnail" : ["file",     12, "Password", "Enter your ", "left", "fa fa-lock",3],
+                    "nama"      : ["text", 12, "Nama Lengkap", "Enter your ", "left", "fa fa-user", 3],
+                    "email"     : ["email", 6, "Email", "Enter your ", "left", "fa fa-envelope-o", 3],
+                    "password"  : ["password", 6, "Password", "Enter your ", "left", "fa fa-eye", 3],
+                    "telepon"   : ["phone", 4, "No Telepon", "Enter your ", "left", "fa fa-phone", 3],
+                    "alamat"    : ["text", 8, "Alamat", "Enter your ", "left", "fa fa-map-marker", 3]
+                },
+                "footer": {
+                    "save": [
+                        "Update",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+          }
+     }
+ },
+ {
+    "id": "mdSetelan",
+    "key": "B0FAA-327A4-46C11-FEF72",
+    "modal": {
+        "elementById": "mdProfil",
+        "title": "From Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"form",
+        "body":{
+                "elementById": "mdProfil",
+                "upItem": true,
+                "type": "form",
+                "cradensial": "5EEE1-FA9EA-D4390-D44A3",
+                "action": {
+                    "nama"      : ["text", 12, "Nama Lengkap", "Enter your ", "left", "fa fa-user", 3],
+                    "email"     : ["email", 6, "Email", "Enter your ", "left", "fa fa-envelope-o", 3],
+                    "password"  : ["password", 6, "Password", "Enter your ", "left", "fa fa-eye", 3],
+                    "telepon"   : ["phone", 4, "No Telepon", "Enter your ", "left", "fa fa-phone", 3],
+                    "alamat"    : ["text", 8, "Alamat", "Enter your ", "left", "fa fa-map-marker", 3]
+                },
+                "footer": {
+                    "save": [
+                        "Update",
+                        "success ml-2 btn-xs"
+                    ],
+                    "cancel": [
+                        "Batalkan",
+                        "outline-light btn-xs"
+                    ],
+                    "class": "text-right"
+                }
+          }
+     }
+ }
+
+]

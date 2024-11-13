@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # Izinkan akses langsung ke folder tertentu
+  RewriteCond %{REQUEST_URI} ^/public/ [OR]
+  RewriteCond %{REQUEST_URI} ^/assets/ [OR]
+  RewriteCond %{REQUEST_URI} ^/images/ [OR]
+  RewriteCond %{REQUEST_URI} ^/files/
+  RewriteRule .* - [L]
+
+  # Izinkan akses langsung ke file dengan ekstensi tertentu
+  RewriteCond %{REQUEST_FILENAME} -f [NC]
+  RewriteRule .* - [L]
+
+
+  # Arahkan semua permintaan lainnya ke direktori app/
+  RewriteRule ^$ app/ [L]
+  RewriteRule (.*) app/index.php?url=$1 [L]
+</IfModule>
+
+<Files "ngorei.config">
+     Require all denied
+</Files>

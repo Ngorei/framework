@@ -1,0 +1,74 @@
+<div id="menuBar"></div>
+<div class="grid-cont">
+  <div class="dummy-box"></div>
+  <div class="row-number-cont"></div>
+  <div class="cells-cont" id="seteditor">
+    <div class="column-letter-cont"></div>
+  </div>
+</div>
+<div class="sheet-action-cont">
+  <span class="material-icons"> post_add </span>
+  <div class="sheets-folder-cont">
+    <div class="sheet-cont">Sheet 1</div>
+  </div>
+</div>
+
+<!-- partial -->
+<script type="module">
+    const Tds=new Dom.Components()
+        Tds.Spreadsheet({
+           elementById:'menuBar',
+           fileName:'index.xlsx',
+           contenteditable:'seteditor',
+           template:'indexOne',
+           data:'presentasi/data.json',
+        })
+</script>
+<style>
+.column-resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+
+  cursor: col-resize;
+}
+
+.col-letters {
+  position: relative;
+}
+.row-number-resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: col-resize;
+  z-index: 1;
+}
+
+.row-number-cont {
+  position: relative;
+}
+
+
+  /* Tambahkan gaya dasar untuk spreadsheet */
+/*  .grid-cont {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-cell-cont {
+    display: flex;
+  }
+  .cell, .row-numbers, .col-letters {
+    border: 1px solid #ccc;
+    min-width: 50px;
+    min-height: 25px;
+    padding: 2px;
+  }
+  .row-numbers, .col-letters {
+    background-color: #f0f0f0;
+    text-align: center;
+  }*/
+</style>

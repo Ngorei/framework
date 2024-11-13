@@ -1,0 +1,23 @@
+[{
+    "id": "Static",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Static",
+        "title": "Open Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Static",
+        "body":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatem, distinctio itaque."
+     }
+},{
+    "id": "Static2",
+    "key": "FE01C-E2A7F-BAC8F-AFAED",
+    "modal": {
+        "elementById": "Static",
+        "title": "Open Modal",
+        "backdrop":"static",
+        "backdropColor":false,
+        "model":"Static",
+        "body":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatem, distinctio itaque."
+     }
+}]
