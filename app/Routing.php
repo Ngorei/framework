@@ -20,10 +20,10 @@ class Routing {
              $_SESSION['VID'] = $_COOKIE['VID'];
          }
          $uid = [];
-         if (isset($_SESSION['oauth_token'])) {
-             $uid = Tds::uid($_SESSION['oauth_token']);
+         if (!empty($_COOKIE['oauth_id'])) {
+             $uid = Tds::uid($_COOKIE['oauth_id']);
          } else {
-             $uid = ['user_id' => null]; // atau nilai default lainnya
+             $uid = ['oauth_id' => '']; // atau nilai default lainnya
          }
          $meta = $Tds->properti();
          // Mengatur variabel berdasarkan apakah cookie 'request' ada atau tidak
@@ -36,9 +36,6 @@ class Routing {
          $indexOn = [
              'home' => HOST.'/#home',
              'host' => HOST,
-             'App.js' => HOST.'/App.js',
-             'ngorei.js' => HOST .'/assets/v4.0.1/ngorei.js',
-             'Assets.js' => HOST .'/Assets.js',
              'sitename' => $meta['sitename'],
              'title' => $og_title,
              'description' => $og_description,
@@ -46,13 +43,15 @@ class Routing {
              'favicon' => $og_favicon,
              'images' => $og_images,
              'site_name' => HOST,
-             'version' => $meta['version'],
-             'qrcode'=> isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
-             'qrlogin'=> isset($_COOKIE['VID']) ? Tds::QRcode($_COOKIE['VID']) : '',
+             'version'  =>$meta['version'],
+             'qrcode'=>  isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
+             'qrlogin'=> isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
          ];
          $tatiyeNet->addSpecialVariable("link", HOST."/");
          $tatiyeNet->addSpecialVariable("img", HOST."/img/");
-         // Menggabungkan data dari indexOn dan outputArray
+         $tatiyeNet->includeTemplate("require", DIR);
+
+
          $outputArray = [];
          foreach ($Tds->Navigation() as $subArray) {
              if (is_array($subArray)) {
@@ -86,29 +85,24 @@ class Routing {
          }
          
          // Menambahkan asset header dan footer
-         $headerAssets = $Tds->assets('header');
-         if (is_array($headerAssets)) {
-             foreach ($headerAssets as $value) {
-                 $tatiyeNet->TDSnet('header', [
-                     'ASSETS' => $Tds->refAssets($value),
-                 ]);
-             }
-         }
-         
-         $footerAssets = $Tds->assets('footer');
-         if (is_array($footerAssets)) {
-             foreach ($footerAssets as $value) {
-                 $tatiyeNet->TDSnet('footer', [
-                     'ASSETS' => $Tds->refAssets($value),
-                 ]);
-             }
-         }
-         // echo ROOT . '/index.html';
+         $tatiyeNet->setAssets($Tds->assets('header'), 'header');
+         $tatiyeNet->setAssets(array_merge($Tds->assets('footer'),array(
+            "module|assets/v4.0.1/ngorei.js",
+            'module|App.js',
+            "module|Assets.js"
+        )), 'footer');
+
          if (TdsProtokol::httpServer()=='mobile') {
            echo $tatiyeNet->SDK($Tds->dir('/mobile.html'));
          } else {
-            echo $tatiyeNet->SDK(ROOT . '/index.html');
+              if (!empty($uid['oauth_id'])) {
+                 echo $tatiyeNet->SDK(ROOT . '/dashboard.html');
+              } else {
+                 echo $tatiyeNet->SDK(ROOT . '/index.html');
+              }
+      
          }  
     }
 }
+
 ?>

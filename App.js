@@ -1,30 +1,26 @@
 const App=Ngorei.App({
-       "indexOn"       :'#app',
        "version"       :'v4.0.1',
+       "indexOn"       :'#app',
        "container"     :'#container',
        "rewriteRule"   :'public',
-       "sitename"      :'Tatiye',
-       "favicon"       :"logo.png",
-       "images"        :"data.png",
-       "title"         :"Dashboard",
-       "description"   :"Platform terintegrasi yang dirancang khusus untuk Pemerintah Kabupaten Pohuwato",
+       "sitename"      :'Ngorei',
+       "favicon"       :"favicon.png",
+       "images"        :"logo.png",
+       "title"         :"Ngorei - framework",
+       "description"   :"Berkreasi! Dengan fokus pada HTML, CSS, dan JavaScript standar, membangun website biasa, namun dengan hasil yang luar biasa.",
        "sitemap"       :false,
-       "development"   :true,
+       "development"   :false,
+       "precodeprismjs":false,
        "assets" :{
              "header":[ 
-                // ICON
                 "assets/lib/icon/icon.css",
                 "assets/css/animate.min.css",
-                "assets/css/bootstrap.css",
-     
+                "assets/css/bootstrap.css"
              ],
              "footer":[
-                "assets/js/jquery.min.js", 
-                "assets/js/jquery-ui.min.js",
-                "assets/js/bootstrap.bundle.min.js",
-                "module|assets/v4.0.1/ngorei.js",
-                "module|App.js",
-                "module|Assets.js",
+                "assets/lib/jquery.min.js", 
+                "assets/lib/jquery-ui.min.js",
+                "assets/lib/bootstrap.bundle.min.js",
              ]
         },
        "components"    :"Components",
@@ -45,7 +41,7 @@ const App=Ngorei.App({
            "home":{  
                "home":        ["Home",          "home"],
                "web":         ["web",           "web/index"],
-               "seluler":     ["seluler",          "seluler/index"],
-          }
+               "seluler":     ["seluler",       "seluler/index"],
+              }
      });
-       
+   

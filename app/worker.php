@@ -11,24 +11,22 @@
         'host'         => HOST,
         'link'         => HOST,
         'domain'       => HOST,
-        'favicon'      => HOST,
-        'App.js'       => HOST . '/App.js',
-        'ngorei.js'    => HOST . '/assets/v4.0.1/ngorei.js',
-        'Assets.js'    => HOST . '/Assets.js',
-        'version' => $meta['version'],
-        'qrcode'=> isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
-        'qrlogin'=> isset($_COOKIE['VID']) ? Tds::QRcode($_COOKIE['VID']) : '',
+        'version'      => $meta['version'],
+        'qrcode'       => isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
+        'qrlogin'      => isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
     ];
     $tatiyeNet->addSpecialVariable("link", HOST."/");
     $tatiyeNet->addSpecialVariable("img", HOST."/img/");
-    $tatiyeNet->addFile("public", DIR);
+    $tatiyeNet->includeTemplate("require", DIR);
+ 
+    
     $outputArray = array();
     foreach ($Tds->Navigation() as $subArray) {
         foreach ($subArray as $key => $value) {
             $outputArray[$key] = $value;
         }
     }
-    foreach (array_merge($indexOn,$uid,Tds::workerImg()) as $page => $value) {
+    foreach (array_merge($indexOn,$uid) as $page => $value) {
         $tatiyeNet->val($page, $value);
     }
 
@@ -96,5 +94,3 @@
          }     
       }
       
-  
-echo $Tds->refAssets('assets/lib/prismjs/prism.min.js');

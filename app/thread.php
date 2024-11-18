@@ -6,11 +6,11 @@ $tatiyeNet = new Ngorei();
     $uid=$Tds->uid($_POST['uid']);
     $indexOn = [
         'home'         => HOST . '#home',
-        'host' => HOST,
-        'link' => HOST,
-        'domain' => HOST,
-        'qrcode'=> isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
-        'qrlogin'=> isset($_COOKIE['VID']) ? Tds::QRcode($_COOKIE['VID']) : '',
+        'host'         => HOST,
+        'link'         => HOST,
+        'domain'       => HOST,
+        'qrcode'       => isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
+        'qrlogin'      => isset($_COOKIE['VID']) ? $_COOKIE['VID'] : '',
     ];
     $tatiyeNet->addSpecialVariable("link", HOST."/");
     $tatiyeNet->addSpecialVariable("img", HOST."/img/");
@@ -21,13 +21,16 @@ $tatiyeNet = new Ngorei();
         }
     }
  
+    $tatiyeNet->addSpecialVariable("link", HOST."/");
     $tatiyeNet->addSpecialVariable("img", HOST."/img/");
+    $tatiyeNet->includeTemplate("require", DIR);
+ 
     $storage = isset($_POST['data']) ? json_decode($_POST['data'], true) : [];
     if (!is_array($storage)) {
         $storage = [];
     }
     
-    foreach (array_merge($indexOn, $outputArray, $storage,$uid,Tds::workerImg()) as $page => $value) {
+    foreach (array_merge($indexOn, $outputArray, $storage,$uid) as $page => $value) {
         $tatiyeNet->val($page, $value);
     }
 
@@ -64,4 +67,3 @@ $tatiyeNet = new Ngorei();
           }
 
     } 
-    echo $Tds->refAssets('assets/lib/prismjs/prism.min.js');

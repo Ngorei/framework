@@ -9,7 +9,7 @@ export function googleSignin(attr) {
     // Tambahkan event listener ke tombol kustom
     document.getElementById(attr.elementById).addEventListener("click", () => {
       google.accounts.id.prompt();
-      console.log('aaaaaaaaaaaaa')
+     
     });
 
   }

@@ -16,9 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.4|^8.0",
-        "phpfastcache/phpfastcache": "v8.x-dev",
-        "endroid/qr-code": "^4.6"
+        "php": "^7.4|^8.0"
     },
     "prefer-stable": true,
     "config": {

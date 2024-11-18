@@ -15,25 +15,6 @@ class ComposerStaticInit0ea608cb83c83991af00a10210893fc7
         array (
             'app\\' => 4,
         ),
-        'P' => 
-        array (
-            'Psr\\SimpleCache\\' => 16,
-            'Psr\\Cache\\' => 10,
-            'Phpfastcache\\Tests\\' => 19,
-            'Phpfastcache\\' => 13,
-        ),
-        'E' => 
-        array (
-            'Endroid\\QrCode\\' => 15,
-        ),
-        'D' => 
-        array (
-            'DASPRiD\\Enum\\' => 13,
-        ),
-        'B' => 
-        array (
-            'BaconQrCode\\' => 12,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -44,34 +25,6 @@ class ComposerStaticInit0ea608cb83c83991af00a10210893fc7
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/helpers',
-        ),
-        'Psr\\SimpleCache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
-        ),
-        'Psr\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/cache/src',
-        ),
-        'Phpfastcache\\Tests\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpfastcache/phpfastcache/tests/lib',
-        ),
-        'Phpfastcache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpfastcache/phpfastcache/lib/Phpfastcache',
-        ),
-        'Endroid\\QrCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/endroid/qr-code/src',
-        ),
-        'DASPRiD\\Enum\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dasprid/enum/src',
-        ),
-        'BaconQrCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
         ),
     );
 

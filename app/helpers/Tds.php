@@ -1,25 +1,18 @@
 <?php
 namespace app;
 use app\TdsWjt as Wjt;
-use Phpfastcache\CacheManager;
-use Phpfastcache\Config\ConfigurationOption;
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\Color\Color;
 class Tds {
-    private $host;
-    private $directory;
-    private $controllers;
-    private $uid;
-    private $cache;
+    private string $host;
+    private string $directory;
+    private string $controllers;
+    private ?string $uid;
+    private ?object $cache;
 
     // Konstruktor
     public function __construct($base = 'index') {
-        // Mendapatkan direktori root proyek
         $this->host = HOST.'/';
-        $this->host = HOST.'/';
-        $this->directory = ROOT; // Or some actual directory value
-        $this->controllers =CRTL; 
+        $this->directory = ROOT;
+        $this->controllers = CRTL;
     }
 
     /*
@@ -29,27 +22,12 @@ class Tds {
     | Develover Tatiye.Net 2020
     |
     */
-    public static function dir($dir = '') {
+    public static function dir(string $dir = ''): string {
         return ROOT . $dir;
     } 
 
-    public static function QRcode($url, $width =250,$margin=0) {
-        try {
-            // Konfigurasi QR Code
-            $qrCode = QrCode::create($url)
-                ->setSize($width)          // Ukuran QR Code (pixel)
-                ->setMargin($margin)         // Margin/padding (pixel)
-                ->setForegroundColor(new Color(0, 0, 0))     // Warna QR (hitam)
-                ->setBackgroundColor(new Color(255, 255, 255)); // Warna background (putih)
+     public static function QRcode($url, $width =250,$margin=0) {
 
-            // Generate QR Code
-            $writer = new PngWriter();
-            $result = $writer->write($qrCode);
-            return $result->getDataUri();
-            
-        } catch (Exception $e) {
-            return 'Gagal menggenerate QR Code: ' . $e->getMessage();
-        }
      }
       /* and class oauth */
      public static function getWJT($token){
@@ -57,7 +35,7 @@ class Tds {
         return $GetID;
       }
 
-       public static function headerContent($key){
+       public static function headerContent($key=''){
                error_reporting(0);
                // header("Access-Control-Allow-Origin:".self::LINK());
                header("Access-Control-Allow-Origin:*");
@@ -83,88 +61,149 @@ class Tds {
         }
     }
 
-     public static function imgPath($img=''){
-       $Exp=array();
-       $filePath = CRTL . 'elements.json';
-        if (!file_exists($filePath)) {
-            throw new Exception("File tidak ditemukan: " . $filePath);
-        }
-        $navigasiData = file_get_contents($filePath);
-        $variable = json_decode($navigasiData, true);
-        // Tambahkan direktori yang ingin ditampilkan
-        $customDir =ROOT.'/assets/images';
-        $Exp2=array();
-        $subfolders = ['doc', 'logo', 'topik'];
-         foreach ($subfolders as $index => $subfolder) {
-                    $Exp2['img'.$index]=$customDir.'/'.$subfolder;
-         }
-         $variable['custom'] =$Exp2;
-        foreach ($variable as $key1 => $value) {
-             foreach ($value as $key => $row) {
-                $files = ($key1 === 'custom') ? $row : Tds::dir('/'.$row);
-                if (!is_dir($files)) {
-                } else {
-                    $fileList = scandir($files);
-                    if (empty($fileList)) {
+     public static function imgPath($FileName=''){
+        $directory = ROOT;
+        $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg'];
+        
+        // Fungsi helper untuk pencarian rekursif
+        $searchImageFile = function($fileName, $dir) use (&$searchImageFile, $allowedTypes) {
+            try {
+                // Periksa izin direktori
+                if (!is_readable($dir)) {
+                    chmod($dir, 0777); // Tambahkan izin baca
+                }
+                
+                $files = scandir($dir);
+                
+                foreach ($files as $file) {
+                    $path = $dir . '/' . $file;
+                    $path = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $path);
+                    
+                    if ($file == '.' || $file == '..') {
+                        continue;
+                    }
+                    
+                    if (is_dir($path)) {
+                        $result = $searchImageFile($fileName, $path);
+                        if (!empty($result)) {
+                            return $result;
+                        }
                     } else {
-                        foreach ($fileList as $file) {
-                            if ($file != "." && $file != "..") {
-                                $fullPath = $files . DIRECTORY_SEPARATOR . $file;
-                                $ext = pathinfo($fullPath, PATHINFO_EXTENSION);
-                                if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png', 'gif', 'svg'])) {
-                                    if ($file==$img) {
-                                       return $files.'/'.$file;
-                                    } 
-
-                                }
+                        if (strtolower($file) === strtolower($fileName)) {
+                            $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                            if (in_array($extension, $allowedTypes)) {
+                                // Periksa izin file
+                                if (!is_readable($path)) {
+                                    chmod($path, 0644); // Tambahkan izin baca untuk file
+                                }     
+                                $IDpath = explode(ROOT, $path);
+                                $normalizedPath = str_replace(['\\', '/'], '/', $path);
+                                return [
+                                    'filename' => $file,
+                                    'dir' => $normalizedPath,
+                                    'path' => isset($IDpath[1]) ? str_replace(['\\', '/'], '/', $IDpath[1]) : '',
+                                    'size' => filesize($path),
+                                    'size_formatted' => round(filesize($path) / 1024, 2) . ' KB',
+                                    'modified' => date("Y-m-d H:i:s", filemtime($path)),
+                                    'extension' => $extension,
+                                    'mime_type' => mime_content_type($path)
+                                ];
                             }
                         }
                     }
                 }
-             }
-        }
+                return null;
+            } catch (Exception $e) {
+                error_log("Error in imgPath: " . $e->getMessage());
+                return null;
+            }
+        };
+        
+        // Mulai pencarian dari direktori root
+        return $searchImageFile($FileName, $directory);
     }
 
 
 
      public static function workerImg(){
-       $Exp=array();
-       $filePath = CRTL . 'elements.json';
-        if (!file_exists($filePath)) {
-            throw new Exception("File tidak ditemukan: " . $filePath);
-        }
-        $navigasiData = file_get_contents($filePath);
-        $variable = json_decode($navigasiData, true);
-        // Tambahkan direktori yang ingin ditampilkan
-        $customDir =ROOT.'/assets/images';
-        $Exp2=array();
-        $subfolders = ['doc', 'logo', 'topik'];
-         foreach ($subfolders as $index => $subfolder) {
-                    $Exp2['img'.$index]=$customDir.'/'.$subfolder;
-         }
-         $variable['custom'] =$Exp2;
-        foreach ($variable as $key1 => $value) {
-             foreach ($value as $key => $row) {
-                $files = ($key1 === 'custom') ? $row : Tds::dir('/'.$row);
-                if (!is_dir($files)) {
+        $directory = ROOT;
+        $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg'];
+        $results = [];
+        
+        // Tambahkan cache directory
+        $cacheDir = dirname(__DIR__) . '/cache';
+        $cacheFile = $cacheDir . '/worker_img_cache.json';
+        $cacheMetaFile = $cacheDir . '/worker_img_meta.json';
+        
+        // Hitung jumlah file gambar saat ini
+        $currentFileCount = 0;
+        $countFiles = function($dir) use (&$countFiles, &$currentFileCount, $allowedTypes) {
+            $files = scandir($dir);
+            foreach ($files as $file) {
+                if ($file == '.' || $file == '..') continue;
+                
+                $path = $dir . '/' . $file;
+                if (is_dir($path)) {
+                    $countFiles($path);
                 } else {
-                    $fileList = scandir($files);
-                    if (empty($fileList)) {
-                    } else {
-                        foreach ($fileList as $file) {
-                            if ($file != "." && $file != "..") {
-                                $fullPath = $files . DIRECTORY_SEPARATOR . $file;
-                                $ext = pathinfo($fullPath, PATHINFO_EXTENSION);
-                                if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png', 'gif', 'svg'])) {
-                                  $Exp[$file]=self::img($file);
-                                }
-                            }
-                        }
+                    $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                    if (in_array($extension, $allowedTypes)) {
+                        $currentFileCount++;
                     }
                 }
-             }
+            }
+        };
+        $countFiles($directory);
+        
+        // Cek cache dan metadata
+        $shouldRefreshCache = true;
+        if (file_exists($cacheFile) && file_exists($cacheMetaFile)) {
+            $metadata = json_decode(file_get_contents($cacheMetaFile), true);
+            if ($metadata && 
+                $metadata['fileCount'] === $currentFileCount && 
+                (time() - filemtime($cacheFile) < 3600)) {
+                return json_decode(file_get_contents($cacheFile), true);
+            }
         }
-        return $Exp;
+        
+        // Jika cache perlu diperbarui, scan ulang directory
+        $scanDirectory = function($dir) use (&$scanDirectory, $allowedTypes, &$results) {
+            $files = scandir($dir);
+            foreach ($files as $file) {
+                $path = $dir . '/' . $file;
+                $path = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $path);
+                
+                if ($file == '.' || $file == '..') continue;
+                
+                if (is_dir($path)) {
+                    $scanDirectory($path);
+                } else {
+                    $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                    if (in_array($extension, $allowedTypes)) {
+                        $IDpath = explode(ROOT, $path);
+                        $normalizedPath = str_replace(['\\', '/'], '/', $path);
+                        $results[$file] = self::img($file);
+                    }
+                }
+            }
+        };
+        
+        // Mulai scan dari directory root
+        $scanDirectory($directory);
+        
+        // Buat direktori cache jika belum ada
+        if (!is_dir($cacheDir)) {
+            mkdir($cacheDir, 0777, true);
+        }
+        
+        // Simpan hasil ke cache dan metadata
+        file_put_contents($cacheFile, json_encode($results));
+        file_put_contents($cacheMetaFile, json_encode([
+            'fileCount' => $currentFileCount,
+            'lastUpdate' => time()
+        ]));
+        
+        return $results;
     }
     /*
     |--------------------------------------------------------------------------
@@ -383,22 +422,7 @@ class Tds {
         }
     }
 
-    public function linkGet($searchLink,$uid='') {
-    $searchLink = "http://192.168.1.112/DOM5/#web/proyek"; // URL yang ingin dicari
-    $result = self::linkThread($searchLink);
-
-// Hasil akan berupa array yang berisi informasi tentang link tersebut
-        if ($result) {
-            echo "Title: " . $result['title'] . "\n";
-            echo "Name: " . $result['name'] . "\n";
-            echo "Hashtag: " . $result['hastag'] . "\n";
-            echo "Link: " . $result['link'] . "\n";
-            echo "Thread: " . $result['thread'] . "\n";
-            echo "Key: " . $result['key'] . "\n";
-        } else {
-            echo "Link tidak ditemukan";
-        }
-    }
+ 
     /*
     |--------------------------------------------------------------------------
     | Initializes hasItem 
@@ -564,9 +588,9 @@ class Tds {
     | Develover Tatiye.Net 2020
     |
     */
-     public function URLParser($url) {
+     public function URLParser(?string $url): array {
          // Memisahkan domain dan path
-        $parsed_url = parse_url($url);
+        $parsed_url = parse_url($url ?? '');
 
         // Menangani skema dan host jika ada
         $scheme = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
@@ -784,6 +808,66 @@ class Tds {
           
       }
       /* and class oauth */
+
+     public static function publicFile($namaFile, &$results, $targetFolder = '') {
+            $path = realpath(DIR);
+            if ($path === false || !is_dir($path)) {
+                return false;
+            }
+            
+            // Normalisasi path dengan mengubah backslash ke forward slash
+            $namaFile = str_replace('\\', '/', $namaFile);
+            
+            $fileInfo = pathinfo($namaFile);
+            $tipeFile = isset($fileInfo['extension']) ? strtolower($fileInfo['extension']) : '';
+            
+            // Gunakan targetFolder sebagai subPath
+            self::scanFolder($path, $namaFile, $tipeFile, $results, $targetFolder);
+            return $results;
+        }
+
+         public static function scanFolder($dir, $namaFile, $tipeFile, &$results, $targetSubPath = '') {
+            $files = scandir($dir);
+            foreach($files as $file) {
+                if ($file != "." && $file != "..") {
+                    $path = $dir . '/' . $file;
+                    
+                    if (is_file($path)) {
+                        // Dapatkan path relatif dari file saat ini
+                        $relativePath = str_replace(DIR, '', $path);
+                        $relativePath = ltrim(str_replace('\\', '/', $relativePath), '/');
+                        $currentSubPath = dirname($relativePath);
+                        // Jika targetSubPath tidak kosong, hanya cari di folder yang diminta
+                        if ($file === $namaFile) {
+                            if (empty($targetSubPath) || strpos($currentSubPath, $targetSubPath) !== false) {
+                                $urlPath = str_replace('\\', '/', $relativePath);
+                                $IDpublic = explode('public/', $urlPath);
+                                $IDtype = explode('.', $IDpublic[1]);
+                                $fileUrl = HOST . '/public/' . $IDpublic[1];
+                                $results[] = array(
+                                    'name' => $file,
+                                    'url' => $fileUrl,
+                                    'type' => pathinfo($file, PATHINFO_EXTENSION),
+                                    'hastag' => HOST . "/#" . $IDtype[0],
+                                );
+                            }
+                        }
+                    }
+                    if (is_dir($path)) {
+                       self::scanFolder($path, $namaFile, $tipeFile, $results, $targetSubPath);
+                    }
+                }
+            }
+      }
+
+            public static  function formatSize(int $bytes): string {
+            $units = array('B', 'KB', 'MB', 'GB', 'TB');
+            $bytes = max($bytes, 0);
+            $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+            $pow = min($pow, count($units) - 1);
+            $bytes /= pow(1024, $pow);
+            return round($bytes, 2) . ' ' . $units[$pow];
+        }
 
       /* and class uid */
 }

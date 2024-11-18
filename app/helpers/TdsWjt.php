@@ -34,6 +34,8 @@ class TdsWjt
   private $driver;
   private $token;
   private $data = array();
+  private $secret_key;
+  private $algorithm = 'HS256';
   
 
   
@@ -169,5 +171,55 @@ class TdsWjt
       return $this->token;
    }
    /* and class code */
+
+   public function sign($payload) {
+        $header = [
+            'typ' => 'JWT',
+            'alg' => $this->algorithm
+        ];
+        
+        $base64UrlHeader = self::base64url_encode(json_encode($header));
+        $base64UrlPayload = self::base64url_encode(json_encode($payload));
+        $signature = hash_hmac('sha256', 
+            $base64UrlHeader . "." . $base64UrlPayload, 
+            $this->secret_key, 
+            true
+        );
+        $base64UrlSignature = self::base64url_encode($signature);
+        
+        return $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
+    }
+
+    public function verify($token) {
+        $parts = explode('.', $token);
+        if (count($parts) != 3) {
+            return false;
+        }
+        
+        list($header, $payload, $signature) = $parts;
+        
+        $valid_signature = hash_hmac('sha256', 
+            $header . "." . $payload, 
+            $this->secret_key, 
+            true
+        );
+        $valid_signature_encoded = self::base64url_encode($valid_signature);
+        
+        return hash_equals($signature, $valid_signature_encoded);
+    }
+
+    public function addClaim($key, $value) {
+        $this->data['rows'][$key] = $value;
+        return self::$instance;
+    }
+
+    public function removeClaim($key) {
+        unset($this->data['rows'][$key]);
+        return self::$instance;
+    }
+
+    public function getClaims() {
+        return $this->data['rows'];
+    }
 
 }

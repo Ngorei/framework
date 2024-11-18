@@ -120,6 +120,102 @@ export default app;
     }
   };
 }
+export function getLanguageIcon(language) {
+    const iconMap = {
+      html: "fab fa-html5",
+      css: "fab fa-css3-alt",
+      js: "fab fa-js",
+      javascript: "fab fa-js",
+      python: "fab fa-python",
+      php: "fab fa-php",
+      java: "fab fa-java",
+      react: "fab fa-react",
+      vue: "fab fa-vuejs",
+      angular: "fab fa-angular",
+      node: "fab fa-node-js",
+      sass: "fab fa-sass",
+      wordpress: "fab fa-wordpress",
+      git: "fab fa-git-alt",
+      json: "fas fa-brackets-curly",
+      wrapped: "fas fa-brackets-curly",
+    };
+
+    return iconMap[language.toLowerCase()] || "fas fa-code"; // Default icon
+  }
+
+  export function wrapCodeWithTerminal() {
+    const codeBlocks = document.querySelectorAll('pre > code:not(.wrapped)');
+    codeBlocks.forEach(codeBlock => {
+      // Tandai kode yang sudah diproses
+      codeBlock.classList.add('wrapped');
+      
+      const classAttr = codeBlock.className;
+      const language = classAttr.replace("language-", "").replace(" wrapped", ""); // Hapus class wrapped dari string language
+      const title = codeBlock.getAttribute("title") || ''
+      const defaultHeight = 200; // Nilai default dalam pixel
+      const setmaxHeight = parseInt(codeBlock.getAttribute("maxHeight")) || defaultHeight;
+      const pxmaxHeight = setmaxHeight + "px"; // Gunakan variabel yang sudah dikonversi
+      const languageIcon = getLanguageIcon(language);
+      let newsTitiel=''
+      if (title) {
+         newsTitiel=title+"."+language
+      } else {
+         newsTitiel=language
+      }
+      const terminal = document.createElement('div');
+      terminal.className = 'terminal';
+      
+      const terminalHeader = document.createElement('div');
+      terminalHeader.className = 'terminal-header';
+      terminalHeader.innerHTML = `
+        <span>
+          <i class="${languageIcon}" aria-hidden="true"></i> 
+          ${newsTitiel} 
+        </span>
+        <div class="terminal-buttons">
+          <button onclick="copyCode(this)" class="copy-btn" aria-label="Salin kode">
+            <i class="icon-feather-copy" aria-hidden="true"></i> Copy
+          </button>
+        </div>
+      `;
+      
+      const terminalFooter = document.createElement('div');
+      terminalFooter.className = 'terminal-footer';
+      if (codeBlock.offsetHeight > setmaxHeight) {
+        terminalFooter.innerHTML = `
+          <button class="show-code-btn" onclick="toggleCode(this)">Lihat selengkapnya</button>
+        `;
+      }
+      
+      const preElement = codeBlock.parentElement;
+
+      preElement.parentNode.insertBefore(terminal, preElement);
+      terminal.appendChild(terminalHeader);
+      terminal.appendChild(preElement);
+      terminal.appendChild(terminalFooter);
+
+      if (codeBlock.offsetHeight > setmaxHeight) {
+        preElement.style.maxHeight = pxmaxHeight;
+        preElement.style.overflow = 'hidden';
+      }
+    });
+  }
+ window.toggleCode = function (button) {
+ 
+    const terminal = button.closest('.terminal');
+    const preElement = terminal.querySelector('pre');
+    const codeElement = preElement.querySelector('code');
+    const defaultHeight = 200;
+    const maxHeight = (parseInt(codeElement.getAttribute("maxHeight")) || defaultHeight) + "px";
+    
+    if (preElement.style.maxHeight === maxHeight) {
+      preElement.style.maxHeight = 'none';
+      button.textContent = 'Lihat lebih sedikit';
+    } else {
+      preElement.style.maxHeight = maxHeight;
+      button.textContent = 'Lihat selengkapnya';
+    }
+  }
 
 
 export function YoutubeID(url) {
@@ -128,7 +224,22 @@ export function YoutubeID(url) {
     return (match && match[2].length === 11) ? match[2] : null
 }
 
+export function parseFilePath(ds) {
+    let file = '';
+    let subfolder = '';
 
+    const isSlash = ds.includes('/')
+    if (isSlash) {
+        const tnSlash = ds.split('/')
+        const lengthSlash = ds.split('/').length - 1;
+        file = tnSlash[lengthSlash];
+        subfolder = tnSlash[(lengthSlash - 1)];
+    } else {
+        file = ds;
+        subfolder = '';
+    }
+    return { file, subfolder };
+}
 
 
  export async function loadFileExplorer() {
@@ -818,20 +929,21 @@ export function OauthIN(uid) {
       },
 
       Red: function (row) {
-        $.ajax({
-          url: red.endpoint + "api/v1/delete/" + row.cradensial,
-          headers: {
-            Authorization: red.cradensial,
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          dataType: "json",
-          data: JSON.stringify(setToken(row)),
-          async: false,
-          success: function (data) {
+          fetch(red.endpoint + "api/v1/delete/" + row.cradensial, {
+            method: "POST",
+            headers: {
+              'Authorization': red.cradensial,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(setToken(row))
+          })
+          .then(response => response.json())
+          .then(data => {
             // console.log(data)
-          },
-        });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
       },
       getToken: function (row) {
         let renderData = [];
@@ -1257,15 +1369,15 @@ export function OauthIN(uid) {
                     var uid = getToken(result.response.token);
                     setCookie("oauth_id",result.response.token);
                     element.OAuthID(uid.name);
-                    if (Token.development === "dashboard") {
+                    //if (Token.development === "dashboard") {
                       OauthIN(uid);
-                         setTimeout(() => {
-                             window.location.href = Token.account;
-                         }, 3000); // Mengarahkan ke URL setelah 5 detik
+                      setTimeout(() => {
+                          window.location.href = Token.account;
+                      }, 3000); // Mengarahkan ke URL setelah 5 detik
                      
-                    } else {
-                      onLink(Token.account);
-                    }
+                    //} else {
+                    //  onLink(Token.account);
+                    //}
                   }
                 }, 2000); // Menghapus elemen alert setelah 5 detik
               }
@@ -1317,6 +1429,25 @@ export function OauthIN(uid) {
               return renderData;
             }
           },
+           publicFile: function (row) {
+              let renderData = [];
+              $.ajax({
+                url: window.Ngorei.baseURL + "sdk/" + md5(window.Ngorei.baseURL),
+                headers: {
+                  Authorization: red.cradensial,
+                  "Content-Type": "application/json",
+                },
+                method: "POST",
+                dataType: "json",
+                data: JSON.stringify(setToken(row)),
+                async: false,
+                success: function (data) {
+                  var add = JSON.stringify(data, null, 10);
+                  renderData = JSON.parse(add);
+                },
+              });
+              return renderData[0]
+           },
         };
       },
       officeFile: function (row) {
@@ -2095,15 +2226,61 @@ export function OauthIN(uid) {
 
       },
       Qrcode: function (main) {
-        var qr = (window.qr = new QRious({
-          element: document.getElementById(main.element),
-          size: main.size,
-          background: main.background,
-          foreground: main.foreground,
-          value: main.value,
-        }));
+          try {
+              var qr = new QRious({
+                  element: document.getElementById(main.id),
+                  value:main.value,
+                  size:160,
+                  background: '#ffffff',
+                  foreground: '#000000',
+                  level: 'H' // Highest error correction
+              });
+          } catch (error) {
+              console.error('Gagal membuat QR code:', error);
+          }
       },
-
+      preCode: function () {
+        Prism.highlightAll(); 
+         wrapCodeWithTerminal();
+        window.copyCode = function (button) {
+        try {
+          // Ambil kode dari elemen
+          const pre = button.closest('.terminal').querySelector('pre');
+          const code = pre.querySelector('code').innerText;
+          
+          // Buat elemen textarea temporary
+          const textarea = document.createElement('textarea');
+          textarea.value = code;
+          textarea.style.position = 'fixed';  // Hindari scrolling
+          textarea.style.opacity = '0';       // Sembunyikan elemen
+          
+          // Tambahkan ke dokumen
+          document.body.appendChild(textarea);
+          
+          // Select dan copy
+          textarea.select();
+          document.execCommand('copy');
+          
+          // Bersihkan
+          document.body.removeChild(textarea);
+          
+          // Feedback visual
+          const originalText = button.textContent;
+          button.innerHTML = '<i class="icon-feather-copy"></i> '+"Tersalin";
+          button.classList.add("bg-green-600");
+          
+          setTimeout(() => {
+            button.innerHTML ='<i class="icon-feather-copy"></i> '+originalText;
+            button.classList.remove("bg-green-600");
+          }, 2000);
+          
+        } catch (err) {
+          console.error("Gagal menyalin:", err);
+          alert("Maaf, gagal menyalin kode");
+        }
+      }
+         // codePrism();
+      },
       Dopdown: function (data) {
         (async () => {
           const utilObj = await Utilities(el.frontend);
@@ -2338,15 +2515,36 @@ export function OauthIN(uid) {
         };
       },
       copyText: function (id) {
-        var clipboard = new Clipboard(id);
-        clipboard.on("success", function (e) {
-          console.log(e.text);
-          localStorage.setItem("clipboard", JSON.stringify(e.text));
-          $(e.trigger).css("color", "#FF5722");
+    const copyButtons = document.querySelectorAll("#"+id);
+    // Tambahkan event listener ke setiap button
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+           const textToCopy = this.getAttribute('data-text') || this.getAttribute('data-clipboard-text');
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                $(this).css("color", "#FF5722");
+                setTimeout(() => {
+                    $(this).css("color", "");
+                }, 1000);
+            } catch (err) {
+                $(this).css("color", "#F7DF1E");
+                console.error('Gagal copy text:', err);
+            }
+            
+            document.body.removeChild(textarea);
         });
-        clipboard.on("error", function (e) {
-          $(e.trigger).css("color", "#F7DF1E");
-        });
+    });
+
+
       },
       OAuthID: function (keyword) {
         var config = dbstorage.getItem("OAuthID");
@@ -2891,6 +3089,14 @@ export function OauthIN(uid) {
             handle: ".modal-header",
             scroll: false,
           });
+        }
+      },
+      navigasi: function (row) {
+          UITds.createNavigasi(row);
+      },
+      Utilities: function () {
+        if (typeof window !== 'undefined') {
+            window.DOM5UI.renderUi(document.body);
         }
       },
       Modal: function (row) {
@@ -4914,6 +5120,7 @@ export function transformText(inputText) {
 }
 
 export async function loadModuleFromUrl(scriptUrl) {
+  console.log(scriptUrl)
   const urlWithCacheBuster = `${scriptUrl}?tn=${new Date().getTime()}`;
   try {
     const module = await import(urlWithCacheBuster);
@@ -6139,7 +6346,7 @@ export function globalManifest(el) {
       },
 
       Package: function () {
-
+ 
       },
       device: function () {
         var mobileRegex =
@@ -6231,6 +6438,7 @@ export function globalManifest(el) {
 
           // console.log(dbstorage.getItem("oauth"),Token)
           window.logout = function (key) {
+              console.log(key)
               setCookie("oauth_id", "");
               const element = new Dom.Components();
               localStorage.removeItem("oauth");
@@ -6247,6 +6455,7 @@ export function globalManifest(el) {
                
             } else {
               onLink(key);
+               window.location.reload();
             }
  
            //   localStorage.clear();
@@ -6277,11 +6486,15 @@ export function globalManifest(el) {
                 $(existing.container).html(data);
                 var rootElement = document.querySelector(existing.container);
                 routerIndex(rootElement);
+                if (e.precodeprismjs) {
+                   const util = new Dom.Components();
+                   util.preCode()
+                }
                 document.querySelectorAll('a').forEach(function(link) {
                  link.addEventListener('click', function(event) {
                    // event.preventDefault(); // Mencegah link dari navigasi
                    var href = this.getAttribute('href');
-                  var content = this.textContent.trim();
+                   var content = this.textContent.trim();
                    console.log('Href:', href);
                    console.log('Content:', content);
                  });
@@ -6322,8 +6535,11 @@ export function globalManifest(el) {
                 $("#" + data.id).html(response);
                 var rootElement = document.querySelector("#" + data.id);
                 routerIndex(rootElement);
-                //loadAssets();
-                saveLinkData();
+                if (e.precodeprismjs) {
+                   const util = new Dom.Components();
+                   util.preCode()
+                }
+                // saveLinkData();
               },
             });
           }
@@ -6346,6 +6562,10 @@ export function globalManifest(el) {
                 var rootElement = document.querySelector("#" + data.id);
                 routerIndex(rootElement);
                 //loadAssets();
+                if (e.precodeprismjs) {
+                   const util = new Dom.Components();
+                   util.preCode()
+                }
               },
             });
           }
@@ -6370,6 +6590,10 @@ export function globalManifest(el) {
                 var rootElement = document.querySelector(existing.container);
                 routerIndex(rootElement);
                 // loadAssets();
+                if (e.precodeprism) {
+                   const util = new Dom.Components();
+                   util.preCode()
+                }
               },
             });
           }
@@ -6882,9 +7106,10 @@ export function globalManifest(el) {
               }
             }
           });
-          function routerIndex3(node) {
-             return false
-          }
+
+
+// Panggil fungsi
+
           function routerIndex(node) {
             // Lewati node yang sudah diproses
             if (node.hasAttribute && node.hasAttribute("data-processed")) {
@@ -6916,11 +7141,8 @@ export function globalManifest(el) {
                 node.nodeValue = text;
               }
             } else if (node.nodeType === Node.ELEMENT_NODE) {
-              // Periksa atribut
               Array.from(node.attributes).forEach(function (attr) {
-                if (attr.name === "switch") {
-       
-                } else if (attr.name === "page") {
+                 if (attr.name === "page") {
                   var nmTabel = "page_" + attr.value;
                   node.setAttribute("id", nmTabel);
                   var thread = dbstorage.getItem(nmTabel);
@@ -6939,18 +7161,14 @@ export function globalManifest(el) {
                       id: attr.value,
                       url: linkElement[0].attributes.href.value,
                     });
-                    // console.log(linkElement[0].attributes.href.value)
                   }
                   $.each(linkElement, function (row, key) {
                     $(this).attr("onclick", "return false;");
                     $(this).click(function (e) {
-                      // console.log(e.target.attributes.href.value)
-                      // const openKey = dekripsiKey(e.target.attributes.id.value,5);
-                      // var urlLink=baseURLRule+'/'+openKey;
                       dbstorage.setItem(nmTabel, {
                         id: attr.value,
                         url: e.target.attributes.href.value,
-                      });
+                      }); 
                       //  saveLinkData();
                       workerOnclick({
                         id: attr.value,
@@ -6959,29 +7177,30 @@ export function globalManifest(el) {
                     });
                   });
                 } else if (attr.name === "import") {
-                       const hanst = window.location.hash.split("#");
-                       const foundFile = window.Ngorei.baseURL + "public/" + hanst[1].split("/")[0] + "/"+attr.value;
-                        var myType = attr.value.split(".");
-                        if (myType[myType.length - 1] === "js") {
-                          loadModuleFromUrl(foundFile)
+                    
+                      const components = new Dom.Storage();
+                      const { file, subfolder } = parseFilePath(attr.value);
+                      const setPublicFile=components.Sdk().publicFile({
+                        "endpoint":'file',
+                        "value":file,
+                        "folder":subfolder
+                      })
+                       const foundFile =setPublicFile.url;
+                        if (setPublicFile.type === "js") {
+                          loadModuleFromUrl(setPublicFile.url)
                             .then((module) => {
-                              // Akses fungsi atau variabel dari modul
-                              // if (typeof module.someFunction === "function") {
-                              //   module.someFunction();
-                              // }
                               if (typeof module.initModule === "function") {
                                 module.initModule(node.getAttribute("key"));
                               } else {
-                                console.log("Fungsi initModule tidak ditemukan dalam modul.");
+                                 console.log("%c Fungsi initModule tidak ditemukan", 'color: red');
                               }
                             })
                             .catch((error) => {
-  
                             });
-                        } else {
-                          loadCssFromUrl(foundFile);
+                        } else if (setPublicFile.type === "css") {
+                          loadCssFromUrl(setPublicFile.url);
                         }
-
+                 
                 } else {
                   // console.log(attr.value)
                   var matches = attr.value.match(/{(.*?)\.(.*?)}/g); // Cocokkan {kunci.properti}
@@ -7013,9 +7232,7 @@ export function globalManifest(el) {
 
               node.childNodes.forEach(routerIndex);
             }
-            //saveLinkData();
-            // feather.replace()
-            //loadAssets()
+      
           }
          // saveLinkData();
           // var clipboard = new Clipboard("#copy");
@@ -11066,4 +11283,356 @@ export function terminal(main, bg = "") {
     };
     // Mengembalikan konstruktor xlsxTable
     return xlsxTable;
+}));
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node/CommonJS
+        module.exports = factory();
+    } else {
+        // Browser global (root adalah window)
+        root.DOM5UI = factory();
+    }
+}(typeof self !== 'undefined' ? self : this, function() {
+    // Tambahkan cache untuk font yang sudah dimuat
+    const loadedFonts = new Set();
+    function loadGoogleFont(fontFamily) {
+        if (loadedFonts.has(fontFamily)) return;
+        loadedFonts.add(fontFamily);
+        
+        const link = document.createElement('link');
+        link.href = `https://fonts.googleapis.com/css2?family=${fontFamily}&display=swap`;
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+    }
+
+    function renderUi(node) {
+        const observer = new MutationObserver(debounce((mutations) => {
+            requestAnimationFrame(() => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        processElement(mutation.target);
+                    }
+                });
+            });
+        }, 100));
+
+        function checkElementStatus(element) {
+            let parent = element.parentElement;
+            while (parent) {
+                if (parent.hasAttribute('ui-ngorei')) return true;
+                parent = parent.parentElement;
+            }
+            return false;
+        }
+
+        function processElement(element) {
+            requestAnimationFrame(() => {
+                if (!checkElementStatus(element)) return;
+                if (element.hasAttribute("data-processed")) return;
+
+                const classList = element.classList;
+                if (!classList) return;
+
+                const styleMap = {
+                    'font-': (value) => {
+                        loadGoogleFont(value);
+                        return { fontFamily: `'${value}', sans-serif` };
+                    },
+                    'fs-': (value) => ({ fontSize: value.replace('px', '') + 'px' }),
+                    'fw-': (value) => ({ fontWeight: value }),
+                    'lh-': (value) => ({ lineHeight: value }),
+                    'clr-': (value) => ({ color: value }),
+                    'bg-': (value) => ({ backgroundColor: value }),
+                    'p-': (value) => ({ padding: value + 'px' }),
+                    'pt-': (value) => ({ paddingTop: value + 'px' }),
+                    'pr-': (value) => ({ paddingRight: value + 'px' }),
+                    'pb-': (value) => ({ paddingBottom: value + 'px' }),
+                    'pl-': (value) => ({ paddingLeft: value + 'px' }),
+                    'm-': (value) => ({ margin: value + 'px' }),
+                    'mt-': (value) => ({ marginTop: value + 'px' }),
+                    'mr-': (value) => ({ marginRight: value + 'px' }),
+                    'mb-': (value) => ({ marginBottom: value + 'px' }),
+                    'ml-': (value) => ({ marginLeft: value + 'px' }),
+                    'flex-': (value) => ({ display: 'flex', justifyContent: value }),
+                    'grid-': (value) => ({ display: 'grid', gridTemplateColumns: `repeat(${value}, 1fr)` }),
+                    'pos-': (value) => ({ position: value }),
+                    'border-': (value) => ({ border: `${value}px solid` }),
+                    'rounded-': (value) => ({ borderRadius: value + 'px' }),
+                    'text-': (value) => {
+                        const alignments = {
+                            'left': 'left',
+                            'center': 'center',
+                            'right': 'right',
+                            'justify': 'justify',
+                            'uppercase': 'uppercase',
+                            'lowercase': 'lowercase',
+                            'capitalize': 'capitalize'
+                        };
+
+                        if (alignments[value]) {
+                            if (['uppercase', 'lowercase', 'capitalize'].includes(value)) {
+                                return { textTransform: value };
+                            }
+                            return { textAlign: alignments[value] };
+                        }
+                        return {};
+                    },
+                    'w-': (value) => ({ width: value.includes('%') ? value : value + 'px' }),
+                    'h-': (value) => ({ height: value.includes('%') ? value : value + 'px' }),
+                    'opacity-': (value) => ({ opacity: value / 100 }),
+                    'rotate-': (value) => ({ transform: `rotate(${value}deg)` }),
+                    'scale-': (value) => ({ transform: `scale(${value})` }),
+                    'flex-dir-': (value) => ({ flexDirection: value }),
+                    'flex-wrap-': (value) => ({ flexWrap: value }),
+                    'flex-grow-': (value) => ({ flexGrow: value }),
+                    'gap-': (value) => ({ gap: value + 'px' }),
+                    'items-': (value) => ({ alignItems: value }),
+                    'grid-cols-': (value) => ({ gridTemplateColumns: `repeat(${value}, 1fr)` }),
+                    'grid-rows-': (value) => ({ gridTemplateRows: `repeat(${value}, 1fr)` }),
+                    'col-span-': (value) => ({ gridColumn: `span ${value}` }),
+                    'row-span-': (value) => ({ gridRow: `span ${value}` }),
+                    'transition-': (value) => ({ transition: `all ${value}s` }),
+                    'hover-scale-': (value) => ({
+                        ':hover': {
+                            transform: `scale(${value})`
+                        }
+                    }),
+                    'shadow-': (value) => {
+                        const shadows = {
+                            'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+                            'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                            'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                            'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                            '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                            'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                            'none': 'none'
+                        };
+                        return { boxShadow: shadows[value] || value };
+                    },
+                    'cursor-': (value) => ({ cursor: value }),
+                    'overflow-': (value) => ({ overflow: value }),
+                    'z-': (value) => ({ zIndex: value }),
+                    'blur-': (value) => ({ backdropFilter: `blur(${value}px)` }),
+                    'gradient-': (value) => ({ 
+                        background: `linear-gradient(${value})` 
+                    }),
+                    'theme-': (value) => ({
+                        '--theme-color': value,
+                        color: 'var(--theme-color)'
+                    }),
+                    'dark:bg-': (value) => ({
+                        '@media (prefers-color-scheme: dark)': {
+                            backgroundColor: value
+                        }
+                    }),
+                    'sm:fs-': (value) => ({
+                        '@media (min-width: 640px)': {
+                            fontSize: value + 'px'
+                        }
+                    }),
+                    'md:fs-': (value) => ({
+                        '@media (min-width: 768px)': {
+                            fontSize: value + 'px'
+                        }
+                    }),
+                    'lg:fs-': (value) => ({
+                        '@media (min-width: 1024px)': {
+                            fontSize: value + 'px'
+                        }
+                    })
+                };
+
+                Array.from(classList).forEach(className => {
+                    for (const [prefix, styleFunc] of Object.entries(styleMap)) {
+                        if (className.startsWith(prefix)) {
+                            const value = className.replace(prefix, '');
+                            const style = styleFunc(value);
+                            Object.assign(element.style, style);
+                            break;
+                        }
+                    }
+                });
+
+                element.setAttribute("data-processed", "true");
+            });
+        }
+
+        document.querySelectorAll('[class*="-"]').forEach(processElement);
+
+        observer.observe(document.body, {
+            attributes: true,
+            subtree: true,
+            attributeFilter: ['class']
+        });
+    }
+
+    // Tambahkan fungsi debounce
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    // Return public API
+    return {
+        renderUi: renderUi,
+        loadGoogleFont: loadGoogleFont
+    };
+}));
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node/CommonJS
+        module.exports = factory();
+    } else {
+        // Browser global
+        root.UITds = factory();
+    }
+}(typeof self !== 'undefined' ? self : this, function() {
+    // Tambahkan konstanta untuk URL
+    const BASE_URL = window.Ngorei.baseURL+'thread';
+    // const dbstorage = new Rtdb().localStorage();
+    const STG=new Dom.Storage();
+    // Tambahkan fungsi helper untuk mengurangi duplikasi
+    function loadContent(fileName, folder, targetId, returnId) {
+        // Validasi parameter
+        if (!fileName || !folder || !returnId) {
+            console.error('Parameter wajib tidak lengkap');
+            return;
+        }
+        const components = new Dom.Storage();
+        const util = new Dom.Components();
+        const setPublicFile = components.Sdk().publicFile({
+            "endpoint": 'file',
+            "value": fileName+'.html',
+            "folder": folder
+        });
+
+        // Dapatkan element target
+        const targetElement = document.getElementById(returnId);
+
+        // Buat fetch request sebagai pengganti $.ajax
+        fetch(BASE_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `package=${setPublicFile.hastag}&uid=false`
+        })
+        .then(response => response.text())
+        .then(response => {
+            if (targetId) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(response, 'text/html');
+                const addElement = doc.querySelector('#' + targetId);
+                targetElement.innerHTML = addElement ? addElement.innerHTML : 'Konten tidak ditemukan';
+            } else {
+                targetElement.innerHTML = response;
+                
+            }
+          
+         util.Utilities()
+                            // const util = new Dom.Components();
+                   util.preCode()
+
+        })
+        .catch(error => {
+            targetElement.innerHTML = 'Terjadi kesalahan saat memuat konten';
+            console.error("Error:", error);
+        });
+
+        // Tampilkan loading
+        targetElement.innerHTML = `
+            <div class="placeholder-paragraph">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        `;
+    }
+
+    // Fungsi untuk membuat menu
+    function createNavigasi(row) {
+        const menuTarget = document.getElementById(row.elementById);
+        
+        // Cek apakah menggunakan struktur list
+        const useList = row.class.li || row.class.ul;
+        
+        menuTarget.innerHTML = `
+            ${useList ? `<ul ${row.class.ul ? `class="${row.class.ul}"` : ''}>` : ''}
+            ${Object.entries(row.navItem).map(([key, value]) => `
+                ${row.class.li ? `<li class="${row.class.li}">` : ''}
+                    <a id="${key}" class="${row.class.a}" onclick="mapMenu(['${value}','${key}']);" href="javascript:void(0);">
+                        ${value[2] ? `<i class="${value[2]} mr-3px"></i>` : ''} 
+                        ${value[0]}
+                    </a>
+                ${row.class.li ? '</li>' : ''}
+            `).join('')}
+            ${useList ? '</ul>' : ''}
+        `;
+
+        // Panggil fungsi untuk load menu default
+        loadDefaultMenu(row);
+
+        window.mapMenu = function (entri) {
+            // Simpan state menu sekarang
+            const menuArray = entri[0].split(',');
+            const [label, page] = menuArray;
+            const pageArray = page.split('/');
+            const lengthArray = page.split('/').length-1;
+            const fileAndId = pageArray[lengthArray].split('#');
+            const fileName = fileAndId[0];
+            const targetId = fileAndId[1] || '';
+            
+            var dataArray = {
+                [row.returnId]: entri[1]
+            }
+            STG.localData('mapMenu').add(dataArray)
+            loadContent(fileName, pageArray[(lengthArray-1)], targetId, row.returnId);
+            setActiveMenu(entri[1],row.class.a);
+        }
+    }
+    function setActiveMenu(activeKey,classa) {
+        // Reset semua menu
+        document.querySelectorAll('.'+classa).forEach(link => {
+            link.classList.remove('active3');
+            link.style.color = '';
+        });
+        
+        // Set menu aktif
+        if (activeKey) {
+            const activeMenu = document.getElementById(activeKey);
+            if (activeMenu) {
+                activeMenu.classList.add('active3');
+                activeMenu.style.color = '#0168fa';
+            }
+        }
+    }
+    // Tambahkan fungsi baru untuk load menu default
+    function loadDefaultMenu(row) {
+        const dataActiv = STG.localData('mapMenu').get(row.returnId);
+         const dtAcv=dataActiv?dataActiv:'index';
+         setActiveMenu(dtAcv,row.class.a);
+        const defaultMenu = row.navItem[dataActiv]?row.navItem[dataActiv]:row.navItem.index;
+        const [label, page] = defaultMenu;
+        const pageArray = page.split('/');
+        const lengthArray = page.split('/').length-1;
+        const fileAndId = pageArray[lengthArray].split('#');
+        const fileName = fileAndId[0];
+        const targetId = fileAndId[1] || '';
+        loadContent(fileName, pageArray[(lengthArray-1)], targetId, row.returnId);
+    }
+    // Return API publik
+    return {
+        createNavigasi: createNavigasi,
+        loadContent: loadContent,
+        setActiveMenu: setActiveMenu,
+        loadDefaultMenu: loadDefaultMenu
+    };
 }));

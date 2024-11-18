@@ -45,8 +45,8 @@ class TdsProtokol  {
      | Develover Tatiye.Net 2021
      | @Date  
      */
-     public static function httpServer(){
-        $statusMobile='mobile';
+     public static function httpServer(): string {
+        $statusMobile = self::STATUS_MOBILE;
         @$userBrowser = $_SERVER['HTTP_ACCEPT']; 
         @$userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? strtolower($_SERVER['HTTP_USER_AGENT']): '';
         if(stristr($userBrowser, 'application/vnd.wap.xhtml+xml')) 
@@ -190,4 +190,19 @@ class TdsProtokol  {
 /**
  * and class tatiyeRbac
  */
+
+private const STATUS_MOBILE = 'mobile';
+private const STATUS_THEME = 'theme';
+
+private static function isMobileBrowser($userAgent) {
+    $patterns = [
+        '/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone)/i',
+        '/iemobile/i',
+        '/windows/i'
+    ];
+    
+    return (preg_match($patterns[0], $userAgent) || 
+            preg_match($patterns[1], $userAgent)) &&
+            !preg_match($patterns[2], $userAgent);
+}
 }
