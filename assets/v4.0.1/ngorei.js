@@ -6486,10 +6486,11 @@ export function globalManifest(el) {
                 $(existing.container).html(data);
                 var rootElement = document.querySelector(existing.container);
                 routerIndex(rootElement);
+                const util = new Dom.Components();
                 if (e.precodeprismjs) {
-                   const util = new Dom.Components();
                    util.preCode()
                 }
+                 util.Utilities()
                 document.querySelectorAll('a').forEach(function(link) {
                  link.addEventListener('click', function(event) {
                    // event.preventDefault(); // Mencegah link dari navigasi
