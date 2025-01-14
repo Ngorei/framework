@@ -1,0 +1,10 @@
+[
+    {
+        "title": "index",
+        "type": "html",
+        "index": "exsampel\/index.html",
+        "originalPath": "exsampel\/index",
+        "modifiedPath": "exsampel\/-index",
+        "path": "exsampel\/index.html"
+    }
+]

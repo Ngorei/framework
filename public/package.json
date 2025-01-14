@@ -1,0 +1,29 @@
+{
+  "properti":{
+    "version"       :"v4.0.5",
+    "sitename"      :"Ngorei",
+    "favicon"       :"logo/faviconb.png",
+    "icon"          :"logo/500pxb.png",
+    "title"         :"Ngorei - framework",
+    "description"   :"Berkreasi! Dengan fokus pada HTML, CSS, "
+  },
+  "assets": {
+    "header": [
+      "css/ngorei.css",
+      "module|js/ngorei-framework.js"
+    ],
+    "footer": [
+      "module|App.js"
+    ],
+    "libraries": [
+      "lib/jquery.js",
+      "lib/jquery-ui.js", 
+      "lib/quill.js",
+      "lib/Sortable.min.js",
+      "lib/crypto-js.min.js",
+      "lib/json-viewer.js", 
+      "lib/prism.min.js"
+    ] 
+  }
+}
+

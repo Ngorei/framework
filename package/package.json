@@ -1,0 +1,40 @@
+{
+    "sdk": {
+        "42263-FDBF4-68B6B-EF3F4": "Oauth\/signin",
+        "BD02F-08E11-D2785-AD74E": "Oauth\/signup",
+        "B9AD3-E86FF-D752D-CEDD7": "exsampel\/brief\/connection",
+        "0378B-C4889-1EA44-6DA8B": "exsampel\/brief\/delete",
+        "405C8-01261-44A89-71118": "exsampel\/brief\/insert",
+        "D2A85-40CE5-1280A-A74D5": "exsampel\/brief\/pagination",
+        "06D72-42851-5EB30-C8571": "exsampel\/brief\/select",
+        "8C43F-00EE5-EFA88-86573": "exsampel\/brief\/update",
+        "8CCA4-8D95B-1F310-81F7A": "exsampel\/brief\/uploads",
+        "8387B-41945-C0F8C-8B1E7": "exsampel\/brief\/validasi",
+        "FD642-3E816-2A6CE-FECD8": "exsampel\/crypto",
+        "3B0F3-DE491-2C35B-4FD92": "exsampel\/flatkey",
+        "43CF9-FE239-82FE3-5CA36": "exsampel\/queue\/delete",
+        "7F18E-57A5C-37755-F91DB": "exsampel\/queue\/itemid",
+        "295C2-741AA-66DB4-6B738": "exsampel\/queue\/send",
+        "A7ADA-2B4DA-25C7E-52A8B": "exsampel\/queue\/update",
+        "C3561-5692A-62739-607A7": "exsampel\/queue\/view"
+    },
+    "api": {
+        "42263-FDBF4-68B6B-EF3F4": false,
+        "BD02F-08E11-D2785-AD74E": false,
+        "B9AD3-E86FF-D752D-CEDD7": false,
+        "0378B-C4889-1EA44-6DA8B": false,
+        "405C8-01261-44A89-71118": false,
+        "D2A85-40CE5-1280A-A74D5": false,
+        "06D72-42851-5EB30-C8571": false,
+        "8C43F-00EE5-EFA88-86573": false,
+        "8CCA4-8D95B-1F310-81F7A": false,
+        "8387B-41945-C0F8C-8B1E7": false,
+        "FD642-3E816-2A6CE-FECD8": false,
+        "3B0F3-DE491-2C35B-4FD92": false,
+        "43CF9-FE239-82FE3-5CA36": false,
+        "7F18E-57A5C-37755-F91DB": false,
+        "295C2-741AA-66DB4-6B738": false,
+        "A7ADA-2B4DA-25C7E-52A8B": false,
+        "C3561-5692A-62739-607A7": false
+    }
+}

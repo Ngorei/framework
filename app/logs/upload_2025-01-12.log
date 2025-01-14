@@ -1,0 +1,913 @@
+2025-01-12 21:49:40 - Memulai proses upload file
+2025-01-12 21:49:40 - Raw input: [{"id":1736693026445,"name":"New Image.png","type":"image","size":"34.09 KB","parentId":null,"file":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAigAYkZC...
+2025-01-12 21:49:40 - Jumlah file yang diterima: 1
+2025-01-12 21:49:40 - File #1:
+2025-01-12 21:49:40 - - ID: 1736693026445
+2025-01-12 21:49:40 - - Nama: New Image.png
+2025-01-12 21:49:40 - - Tipe: image
+2025-01-12 21:49:40 - - IsFolder: tidak
+2025-01-12 21:49:40 - - Ada konten file: ya
+2025-01-12 21:49:40 - - Panjang konten: 46567
+2025-01-12 21:49:40 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:49:40 - Menghapus file: D:\Ngorei/uploads/1736690750034.xlsx
+2025-01-12 21:49:40 - Menghapus file: D:\Ngorei/uploads/1736692827628.pptx
+2025-01-12 21:49:40 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:49:40 - Memproses file: New Image.png
+2025-01-12 21:49:40 - Tipe file: image
+2025-01-12 21:49:40 - IsFolder: tidak
+2025-01-12 21:49:40 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:49:40 - Ekstensi original: png
+2025-01-12 21:49:40 - Tipe gambar dari base64: jpeg
+2025-01-12 21:49:40 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:49:40 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:49:40 - Nama file yang akan disimpan: 1736693026445.jpg
+2025-01-12 21:49:40 - Ini adalah file gambar
+2025-01-12 21:49:40 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:49:40 - === Mulai proses save base64 ===
+2025-01-12 21:49:40 - Nama file: 1736693026445.jpg
+2025-01-12 21:49:40 - Ukuran data base64: 46567 bytes
+2025-01-12 21:49:40 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:49:40 - Panjang data setelah hapus header: 46544
+2025-01-12 21:49:40 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:49:40 - === Selesai proses save base64 ===
+2025-01-12 21:49:40 - Menyimpan ke: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:49:40 - Berhasil menulis 34908 bytes
+2025-01-12 21:49:40 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:49:40 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:49:40 - Dimensi gambar: 566x566
+2025-01-12 21:49:40 - File berhasil disimpan di: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:49:40 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:49:40 - Inserting file with path: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:49:40 - Error utama: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1736693026445' for key 'PRIMARY'
+2025-01-12 21:49:40 - Stack trace: #0 D:\Ngorei\package\exsampel\office\insert.php(418): PDOStatement->execute(Array)
+#1 D:\Ngorei\app\Autoload.php(433): include('D:\\Ngorei\\packa...')
+#2 D:\Ngorei\app\Autoload.php(369): app\Autoload->routeRequest('sdk', '97C4B-7EEF5-4D6...', 'post')
+#3 D:\Ngorei\app\Autoload.php(166): app\Autoload->handleSdkRequest(Array)
+#4 D:\Ngorei\app\Autoload.php(45): app\Autoload->handleRequest()
+#5 D:\Ngorei\app\index.php(110): app\Autoload->__construct()
+#6 D:\Ngorei\app\system\bin\index.php(133): require('D:\\Ngorei\\app\\i...')
+#7 {main}
+2025-01-12 21:50:25 - Memulai proses upload file
+2025-01-12 21:50:25 - Raw input: [{"id":1736693026445,"name":"New Image.png","type":"image","size":"34.09 KB","parentId":null,"file":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAigAYkZC...
+2025-01-12 21:50:25 - Jumlah file yang diterima: 1
+2025-01-12 21:50:25 - File #1:
+2025-01-12 21:50:25 - - ID: 1736693026445
+2025-01-12 21:50:25 - - Nama: New Image.png
+2025-01-12 21:50:25 - - Tipe: image
+2025-01-12 21:50:25 - - IsFolder: tidak
+2025-01-12 21:50:25 - - Ada konten file: ya
+2025-01-12 21:50:25 - - Panjang konten: 46567
+2025-01-12 21:50:25 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:50:25 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:50:25 - Memproses file: New Image.png
+2025-01-12 21:50:25 - Tipe file: image
+2025-01-12 21:50:25 - IsFolder: tidak
+2025-01-12 21:50:25 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:50:25 - Ekstensi original: png
+2025-01-12 21:50:25 - Tipe gambar dari base64: jpeg
+2025-01-12 21:50:25 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:50:25 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:50:25 - Nama file yang akan disimpan: 1736693026445.jpg
+2025-01-12 21:50:25 - Ini adalah file gambar
+2025-01-12 21:50:25 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:50:25 - === Mulai proses save base64 ===
+2025-01-12 21:50:25 - Nama file: 1736693026445.jpg
+2025-01-12 21:50:25 - Ukuran data base64: 46567 bytes
+2025-01-12 21:50:25 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:50:25 - Panjang data setelah hapus header: 46544
+2025-01-12 21:50:25 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:50:25 - === Selesai proses save base64 ===
+2025-01-12 21:50:25 - Menyimpan ke: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:25 - Berhasil menulis 34908 bytes
+2025-01-12 21:50:25 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:50:25 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:50:25 - Dimensi gambar: 566x566
+2025-01-12 21:50:25 - File berhasil disimpan di: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:25 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:50:25 - Inserting file with path: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:25 - Berhasil menyimpan/memperbarui data untuk ID: 1736693026445
+2025-01-12 21:50:41 - Memulai proses upload file
+2025-01-12 21:50:41 - Raw input: [{"id":1736693026445,"name":"New Image.png","type":"image","size":"34.09 KB","parentId":null,"file":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAigAYkZC...
+2025-01-12 21:50:41 - Jumlah file yang diterima: 2
+2025-01-12 21:50:41 - File #1:
+2025-01-12 21:50:41 - - ID: 1736693026445
+2025-01-12 21:50:41 - - Nama: New Image.png
+2025-01-12 21:50:41 - - Tipe: image
+2025-01-12 21:50:41 - - IsFolder: tidak
+2025-01-12 21:50:41 - - Ada konten file: ya
+2025-01-12 21:50:41 - - Panjang konten: 46567
+2025-01-12 21:50:41 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:50:41 - File #2:
+2025-01-12 21:50:41 - - ID: 1736693430981
+2025-01-12 21:50:41 - - Nama: New Document.docx
+2025-01-12 21:50:41 - - Tipe: word
+2025-01-12 21:50:41 - - IsFolder: tidak
+2025-01-12 21:50:41 - - Ada konten file: ya
+2025-01-12 21:50:41 - - Panjang konten: 21684
+2025-01-12 21:50:41 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:50:41 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:50:41 - Memproses file: New Image.png
+2025-01-12 21:50:41 - Tipe file: image
+2025-01-12 21:50:41 - IsFolder: tidak
+2025-01-12 21:50:41 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:50:41 - Ekstensi original: png
+2025-01-12 21:50:41 - Tipe gambar dari base64: jpeg
+2025-01-12 21:50:41 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:50:41 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:50:41 - Nama file yang akan disimpan: 1736693026445.jpg
+2025-01-12 21:50:41 - Ini adalah file gambar
+2025-01-12 21:50:41 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:50:41 - === Mulai proses save base64 ===
+2025-01-12 21:50:41 - Nama file: 1736693026445.jpg
+2025-01-12 21:50:41 - Ukuran data base64: 46567 bytes
+2025-01-12 21:50:41 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:50:41 - Panjang data setelah hapus header: 46544
+2025-01-12 21:50:41 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:50:41 - === Selesai proses save base64 ===
+2025-01-12 21:50:41 - Menyimpan ke: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:41 - Berhasil menulis 34908 bytes
+2025-01-12 21:50:41 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:50:41 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:50:41 - Dimensi gambar: 566x566
+2025-01-12 21:50:41 - File berhasil disimpan di: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:41 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:50:41 - Inserting file with path: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:50:41 - Berhasil menyimpan/memperbarui data untuk ID: 1736693026445
+2025-01-12 21:50:41 - Memproses file: New Document.docx
+2025-01-12 21:50:41 - Tipe file: word
+2025-01-12 21:50:41 - IsFolder: tidak
+2025-01-12 21:50:41 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:50:41 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:50:41 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:50:41 - === Mulai proses save file ===
+2025-01-12 21:50:41 - Tipe file: word
+2025-01-12 21:50:41 - Nama file: 1736693430981.docx
+2025-01-12 21:50:41 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:50:41 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:50:41 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:50:41 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:50:41 - Berhasil menulis 16198 bytes
+2025-01-12 21:50:41 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:50:41 - === Selesai proses save file ===
+2025-01-12 21:50:41 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:41 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:50:41 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:41 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:50:47 - Memulai proses upload file
+2025-01-12 21:50:47 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:50:47 - Jumlah file yang diterima: 1
+2025-01-12 21:50:47 - File #1:
+2025-01-12 21:50:47 - - ID: 1736693430981
+2025-01-12 21:50:47 - - Nama: New Document.docx
+2025-01-12 21:50:47 - - Tipe: word
+2025-01-12 21:50:47 - - IsFolder: tidak
+2025-01-12 21:50:47 - - Ada konten file: ya
+2025-01-12 21:50:47 - - Panjang konten: 21684
+2025-01-12 21:50:47 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:50:47 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:50:47 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:47 - Memproses file: New Document.docx
+2025-01-12 21:50:47 - Tipe file: word
+2025-01-12 21:50:47 - IsFolder: tidak
+2025-01-12 21:50:47 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:50:47 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:50:47 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:50:47 - === Mulai proses save file ===
+2025-01-12 21:50:47 - Tipe file: word
+2025-01-12 21:50:47 - Nama file: 1736693430981.docx
+2025-01-12 21:50:47 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:50:47 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:50:47 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:50:47 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:50:47 - Berhasil menulis 16198 bytes
+2025-01-12 21:50:47 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:50:47 - === Selesai proses save file ===
+2025-01-12 21:50:47 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:47 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:50:47 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:47 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:50:52 - Memulai proses upload file
+2025-01-12 21:50:52 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:50:52 - Jumlah file yang diterima: 1
+2025-01-12 21:50:52 - File #1:
+2025-01-12 21:50:52 - - ID: 1736693430981
+2025-01-12 21:50:52 - - Nama: New Document.docx
+2025-01-12 21:50:52 - - Tipe: word
+2025-01-12 21:50:52 - - IsFolder: tidak
+2025-01-12 21:50:52 - - Ada konten file: ya
+2025-01-12 21:50:52 - - Panjang konten: 21684
+2025-01-12 21:50:52 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:50:52 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:50:52 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:52 - Memproses file: New Document.docx
+2025-01-12 21:50:52 - Tipe file: word
+2025-01-12 21:50:52 - IsFolder: tidak
+2025-01-12 21:50:52 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:50:52 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:50:52 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:50:52 - === Mulai proses save file ===
+2025-01-12 21:50:52 - Tipe file: word
+2025-01-12 21:50:52 - Nama file: 1736693430981.docx
+2025-01-12 21:50:52 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:50:52 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:50:52 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:50:52 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:50:52 - Berhasil menulis 16198 bytes
+2025-01-12 21:50:52 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:50:52 - === Selesai proses save file ===
+2025-01-12 21:50:52 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:52 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:50:52 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:50:52 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:51:50 - Memulai proses upload file
+2025-01-12 21:51:50 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:51:50 - Jumlah file yang diterima: 1
+2025-01-12 21:51:50 - File #1:
+2025-01-12 21:51:50 - - ID: 1736693430981
+2025-01-12 21:51:50 - - Nama: New Document.docx
+2025-01-12 21:51:50 - - Tipe: word
+2025-01-12 21:51:50 - - IsFolder: tidak
+2025-01-12 21:51:50 - - Ada konten file: ya
+2025-01-12 21:51:50 - - Panjang konten: 21684
+2025-01-12 21:51:50 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:51:50 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:51:50 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:51:50 - Memproses file: New Document.docx
+2025-01-12 21:51:50 - Tipe file: word
+2025-01-12 21:51:50 - IsFolder: tidak
+2025-01-12 21:51:50 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:51:50 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:51:50 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:51:50 - === Mulai proses save file ===
+2025-01-12 21:51:50 - Tipe file: word
+2025-01-12 21:51:50 - Nama file: 1736693430981.docx
+2025-01-12 21:51:50 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:51:50 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:51:50 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:51:50 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:51:50 - Berhasil menulis 16198 bytes
+2025-01-12 21:51:50 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:51:50 - === Selesai proses save file ===
+2025-01-12 21:51:50 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:51:50 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:51:50 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:51:50 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:52:15 - Memulai proses upload file
+2025-01-12 21:52:15 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:52:15 - Jumlah file yang diterima: 2
+2025-01-12 21:52:15 - File #1:
+2025-01-12 21:52:15 - - ID: 1736693430981
+2025-01-12 21:52:15 - - Nama: New Document.docx
+2025-01-12 21:52:15 - - Tipe: word
+2025-01-12 21:52:15 - - IsFolder: tidak
+2025-01-12 21:52:15 - - Ada konten file: ya
+2025-01-12 21:52:15 - - Panjang konten: 21684
+2025-01-12 21:52:15 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:52:15 - File #2:
+2025-01-12 21:52:15 - - ID: 1736693524141
+2025-01-12 21:52:15 - - Nama: New Image.png
+2025-01-12 21:52:15 - - Tipe: image
+2025-01-12 21:52:15 - - IsFolder: tidak
+2025-01-12 21:52:15 - - Ada konten file: ya
+2025-01-12 21:52:15 - - Panjang konten: 46567
+2025-01-12 21:52:15 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:52:15 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:52:15 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:15 - Memproses file: New Document.docx
+2025-01-12 21:52:15 - Tipe file: word
+2025-01-12 21:52:15 - IsFolder: tidak
+2025-01-12 21:52:15 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:15 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:52:15 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:52:15 - === Mulai proses save file ===
+2025-01-12 21:52:15 - Tipe file: word
+2025-01-12 21:52:15 - Nama file: 1736693430981.docx
+2025-01-12 21:52:15 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:52:15 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:52:15 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:52:15 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:52:15 - Berhasil menulis 16198 bytes
+2025-01-12 21:52:15 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:52:15 - === Selesai proses save file ===
+2025-01-12 21:52:15 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:15 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:52:15 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:15 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:52:15 - Memproses file: New Image.png
+2025-01-12 21:52:15 - Tipe file: image
+2025-01-12 21:52:15 - IsFolder: tidak
+2025-01-12 21:52:15 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:15 - Ekstensi original: png
+2025-01-12 21:52:15 - Tipe gambar dari base64: jpeg
+2025-01-12 21:52:15 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:52:15 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:52:15 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 21:52:15 - Ini adalah file gambar
+2025-01-12 21:52:15 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:52:15 - === Mulai proses save base64 ===
+2025-01-12 21:52:15 - Nama file: 1736693524141.jpg
+2025-01-12 21:52:15 - Ukuran data base64: 46567 bytes
+2025-01-12 21:52:15 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:52:15 - Panjang data setelah hapus header: 46544
+2025-01-12 21:52:15 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:52:15 - === Selesai proses save base64 ===
+2025-01-12 21:52:15 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:15 - Berhasil menulis 34908 bytes
+2025-01-12 21:52:15 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:52:15 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:52:15 - Dimensi gambar: 566x566
+2025-01-12 21:52:15 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:15 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:52:15 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:15 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 21:52:18 - Memulai proses upload file
+2025-01-12 21:52:18 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:52:18 - Jumlah file yang diterima: 2
+2025-01-12 21:52:18 - File #1:
+2025-01-12 21:52:18 - - ID: 1736693430981
+2025-01-12 21:52:18 - - Nama: New Document.docx
+2025-01-12 21:52:18 - - Tipe: word
+2025-01-12 21:52:18 - - IsFolder: tidak
+2025-01-12 21:52:18 - - Ada konten file: ya
+2025-01-12 21:52:18 - - Panjang konten: 21684
+2025-01-12 21:52:18 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:52:18 - File #2:
+2025-01-12 21:52:18 - - ID: 1736693524141
+2025-01-12 21:52:18 - - Nama: New Image.png
+2025-01-12 21:52:18 - - Tipe: image
+2025-01-12 21:52:18 - - IsFolder: tidak
+2025-01-12 21:52:18 - - Ada konten file: ya
+2025-01-12 21:52:18 - - Panjang konten: 46567
+2025-01-12 21:52:18 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:52:18 - Melewati penghapusan file gambar: 1736693026445
+2025-01-12 21:52:18 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:18 - Melewati penghapusan file gambar: 1736693524141
+2025-01-12 21:52:18 - Memproses file: New Document.docx
+2025-01-12 21:52:18 - Tipe file: word
+2025-01-12 21:52:18 - IsFolder: tidak
+2025-01-12 21:52:18 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:18 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:52:18 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:52:18 - === Mulai proses save file ===
+2025-01-12 21:52:18 - Tipe file: word
+2025-01-12 21:52:18 - Nama file: 1736693430981.docx
+2025-01-12 21:52:18 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:52:18 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:52:18 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:52:18 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:52:18 - Berhasil menulis 16198 bytes
+2025-01-12 21:52:18 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:52:18 - === Selesai proses save file ===
+2025-01-12 21:52:18 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:18 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:52:18 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:18 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:52:18 - Memproses file: New Image.png
+2025-01-12 21:52:18 - Tipe file: image
+2025-01-12 21:52:18 - IsFolder: tidak
+2025-01-12 21:52:18 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:18 - Ekstensi original: png
+2025-01-12 21:52:18 - Tipe gambar dari base64: jpeg
+2025-01-12 21:52:18 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:52:18 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:52:18 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 21:52:18 - Ini adalah file gambar
+2025-01-12 21:52:18 - Menghapus file gambar lama: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:18 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:52:18 - === Mulai proses save base64 ===
+2025-01-12 21:52:18 - Nama file: 1736693524141.jpg
+2025-01-12 21:52:18 - Ukuran data base64: 46567 bytes
+2025-01-12 21:52:18 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:52:18 - Panjang data setelah hapus header: 46544
+2025-01-12 21:52:18 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:52:18 - === Selesai proses save base64 ===
+2025-01-12 21:52:18 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:18 - Berhasil menulis 34908 bytes
+2025-01-12 21:52:18 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:52:18 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:52:18 - Dimensi gambar: 566x566
+2025-01-12 21:52:18 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:18 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:52:18 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:18 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 21:52:58 - Memulai proses upload file
+2025-01-12 21:52:58 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:52:58 - Jumlah file yang diterima: 2
+2025-01-12 21:52:58 - File #1:
+2025-01-12 21:52:58 - - ID: 1736693430981
+2025-01-12 21:52:58 - - Nama: New Document.docx
+2025-01-12 21:52:58 - - Tipe: word
+2025-01-12 21:52:58 - - IsFolder: tidak
+2025-01-12 21:52:58 - - Ada konten file: ya
+2025-01-12 21:52:58 - - Panjang konten: 21684
+2025-01-12 21:52:58 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:52:58 - File #2:
+2025-01-12 21:52:58 - - ID: 1736693524141
+2025-01-12 21:52:58 - - Nama: New Image.png
+2025-01-12 21:52:58 - - Tipe: image
+2025-01-12 21:52:58 - - IsFolder: tidak
+2025-01-12 21:52:58 - - Ada konten file: ya
+2025-01-12 21:52:58 - - Panjang konten: 46567
+2025-01-12 21:52:58 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:52:58 - Menghapus file gambar: D:/Ngorei/uploads/1736693026445.jpg
+2025-01-12 21:52:58 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:58 - Menghapus file gambar: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:58 - Database telah di-truncate
+2025-01-12 21:52:58 - Memproses file: New Document.docx
+2025-01-12 21:52:58 - Tipe file: word
+2025-01-12 21:52:58 - IsFolder: tidak
+2025-01-12 21:52:58 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:58 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:52:58 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:52:58 - === Mulai proses save file ===
+2025-01-12 21:52:58 - Tipe file: word
+2025-01-12 21:52:58 - Nama file: 1736693430981.docx
+2025-01-12 21:52:58 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:52:58 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:52:58 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:52:58 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:52:58 - Berhasil menulis 16198 bytes
+2025-01-12 21:52:58 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:52:58 - === Selesai proses save file ===
+2025-01-12 21:52:58 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:58 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:52:58 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:52:58 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:52:58 - Memproses file: New Image.png
+2025-01-12 21:52:58 - Tipe file: image
+2025-01-12 21:52:58 - IsFolder: tidak
+2025-01-12 21:52:58 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:52:58 - Ekstensi original: png
+2025-01-12 21:52:58 - Tipe gambar dari base64: jpeg
+2025-01-12 21:52:58 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:52:58 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:52:58 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 21:52:58 - Ini adalah file gambar
+2025-01-12 21:52:58 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:52:58 - === Mulai proses save base64 ===
+2025-01-12 21:52:58 - Nama file: 1736693524141.jpg
+2025-01-12 21:52:58 - Ukuran data base64: 46567 bytes
+2025-01-12 21:52:58 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:52:58 - Panjang data setelah hapus header: 46544
+2025-01-12 21:52:58 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:52:58 - === Selesai proses save base64 ===
+2025-01-12 21:52:58 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:58 - Berhasil menulis 34908 bytes
+2025-01-12 21:52:58 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:52:58 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:52:58 - Dimensi gambar: 566x566
+2025-01-12 21:52:58 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:58 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:52:58 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:52:58 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 21:55:13 - Memulai proses upload file
+2025-01-12 21:55:13 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:55:13 - Jumlah file yang diterima: 3
+2025-01-12 21:55:13 - File #1:
+2025-01-12 21:55:13 - - ID: 1736693430981
+2025-01-12 21:55:13 - - Nama: New Document.docx
+2025-01-12 21:55:13 - - Tipe: word
+2025-01-12 21:55:13 - - IsFolder: tidak
+2025-01-12 21:55:13 - - Ada konten file: ya
+2025-01-12 21:55:13 - - Panjang konten: 21684
+2025-01-12 21:55:13 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:55:13 - File #2:
+2025-01-12 21:55:13 - - ID: 1736693524141
+2025-01-12 21:55:13 - - Nama: New Image.png
+2025-01-12 21:55:13 - - Tipe: image
+2025-01-12 21:55:13 - - IsFolder: tidak
+2025-01-12 21:55:13 - - Ada konten file: ya
+2025-01-12 21:55:13 - - Panjang konten: 46567
+2025-01-12 21:55:13 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:55:13 - File #3:
+2025-01-12 21:55:13 - - ID: 1736693697692
+2025-01-12 21:55:13 - - Nama: New Presentation.pptx
+2025-01-12 21:55:13 - - Tipe: powerpoint
+2025-01-12 21:55:13 - - IsFolder: tidak
+2025-01-12 21:55:13 - - Ada konten file: ya
+2025-01-12 21:55:13 - - Panjang konten: 39094
+2025-01-12 21:55:13 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:55:13 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:55:13 - Menghapus file gambar: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:55:13 - Database telah di-truncate
+2025-01-12 21:55:13 - Memproses file: New Document.docx
+2025-01-12 21:55:13 - Tipe file: word
+2025-01-12 21:55:13 - IsFolder: tidak
+2025-01-12 21:55:13 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:55:13 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:55:13 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:55:13 - === Mulai proses save file ===
+2025-01-12 21:55:13 - Tipe file: word
+2025-01-12 21:55:13 - Nama file: 1736693430981.docx
+2025-01-12 21:55:13 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:55:13 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:55:13 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:55:13 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:55:13 - Berhasil menulis 16198 bytes
+2025-01-12 21:55:13 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:55:13 - === Selesai proses save file ===
+2025-01-12 21:55:13 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:55:13 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:55:13 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:55:13 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:55:13 - Memproses file: New Image.png
+2025-01-12 21:55:13 - Tipe file: image
+2025-01-12 21:55:13 - IsFolder: tidak
+2025-01-12 21:55:13 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:55:13 - Ekstensi original: png
+2025-01-12 21:55:13 - Tipe gambar dari base64: jpeg
+2025-01-12 21:55:13 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:55:13 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:55:13 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 21:55:13 - Ini adalah file gambar
+2025-01-12 21:55:13 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:55:13 - === Mulai proses save base64 ===
+2025-01-12 21:55:13 - Nama file: 1736693524141.jpg
+2025-01-12 21:55:13 - Ukuran data base64: 46567 bytes
+2025-01-12 21:55:13 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:55:13 - Panjang data setelah hapus header: 46544
+2025-01-12 21:55:13 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:55:13 - === Selesai proses save base64 ===
+2025-01-12 21:55:13 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:55:13 - Berhasil menulis 34908 bytes
+2025-01-12 21:55:13 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:55:13 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:55:13 - Dimensi gambar: 566x566
+2025-01-12 21:55:13 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:55:13 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:55:13 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:55:13 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 21:55:13 - Memproses file: New Presentation.pptx
+2025-01-12 21:55:13 - Tipe file: powerpoint
+2025-01-12 21:55:13 - IsFolder: tidak
+2025-01-12 21:55:13 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:55:13 - Ekstensi yang ditentukan: .pptx
+2025-01-12 21:55:13 - Nama file yang akan disimpan: 1736693697692.pptx
+2025-01-12 21:55:13 - === Mulai proses save file ===
+2025-01-12 21:55:13 - Tipe file: powerpoint
+2025-01-12 21:55:13 - Nama file: 1736693697692.pptx
+2025-01-12 21:55:13 - Ukuran konten awal: 39094 bytes
+2025-01-12 21:55:13 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:55:13 - Ukuran base64 setelah split: 39008 bytes
+2025-01-12 21:55:13 - Ukuran setelah decode: 29254 bytes
+2025-01-12 21:55:13 - Berhasil menulis 29254 bytes
+2025-01-12 21:55:13 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.presentationml.presentation
+2025-01-12 21:55:13 - === Selesai proses save file ===
+2025-01-12 21:55:13 - File berhasil disimpan di: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 21:55:13 - File terverifikasi, ukuran: 29254 bytes
+2025-01-12 21:55:13 - Inserting file with path: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 21:55:13 - Berhasil menyimpan/memperbarui data untuk ID: 1736693697692
+2025-01-12 21:57:52 - Memulai proses upload file
+2025-01-12 21:57:52 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 21:57:52 - Jumlah file yang diterima: 3
+2025-01-12 21:57:52 - File #1:
+2025-01-12 21:57:52 - - ID: 1736693430981
+2025-01-12 21:57:52 - - Nama: New Document.docx
+2025-01-12 21:57:52 - - Tipe: word
+2025-01-12 21:57:52 - - IsFolder: tidak
+2025-01-12 21:57:52 - - Ada konten file: ya
+2025-01-12 21:57:52 - - Panjang konten: 21684
+2025-01-12 21:57:52 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:57:52 - File #2:
+2025-01-12 21:57:52 - - ID: 1736693524141
+2025-01-12 21:57:52 - - Nama: New Image.png
+2025-01-12 21:57:52 - - Tipe: image
+2025-01-12 21:57:52 - - IsFolder: tidak
+2025-01-12 21:57:52 - - Ada konten file: ya
+2025-01-12 21:57:52 - - Panjang konten: 46567
+2025-01-12 21:57:52 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 21:57:52 - File #3:
+2025-01-12 21:57:52 - - ID: 1736693697692
+2025-01-12 21:57:52 - - Nama: New Presentation.pptx
+2025-01-12 21:57:52 - - Tipe: powerpoint
+2025-01-12 21:57:52 - - IsFolder: tidak
+2025-01-12 21:57:52 - - Ada konten file: ya
+2025-01-12 21:57:52 - - Panjang konten: 39094
+2025-01-12 21:57:52 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 21:57:52 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 21:57:52 - Menghapus file gambar: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:57:52 - Menghapus file: D:\Ngorei/uploads/1736693697692.pptx
+2025-01-12 21:57:52 - Database telah dihapus untuk user: 1
+2025-01-12 21:57:52 - Memproses file: New Document.docx
+2025-01-12 21:57:52 - Tipe file: word
+2025-01-12 21:57:52 - IsFolder: tidak
+2025-01-12 21:57:52 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:57:52 - Ekstensi yang ditentukan: .docx
+2025-01-12 21:57:52 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 21:57:52 - === Mulai proses save file ===
+2025-01-12 21:57:52 - Tipe file: word
+2025-01-12 21:57:52 - Nama file: 1736693430981.docx
+2025-01-12 21:57:52 - Ukuran konten awal: 21684 bytes
+2025-01-12 21:57:52 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:57:52 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 21:57:52 - Ukuran setelah decode: 16198 bytes
+2025-01-12 21:57:52 - Berhasil menulis 16198 bytes
+2025-01-12 21:57:52 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 21:57:52 - === Selesai proses save file ===
+2025-01-12 21:57:52 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:57:52 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 21:57:52 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 21:57:52 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 21:57:52 - Memproses file: New Image.png
+2025-01-12 21:57:52 - Tipe file: image
+2025-01-12 21:57:52 - IsFolder: tidak
+2025-01-12 21:57:52 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:57:52 - Ekstensi original: png
+2025-01-12 21:57:52 - Tipe gambar dari base64: jpeg
+2025-01-12 21:57:52 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 21:57:52 - Ekstensi yang ditentukan: .jpg
+2025-01-12 21:57:52 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 21:57:52 - Ini adalah file gambar
+2025-01-12 21:57:52 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 21:57:52 - === Mulai proses save base64 ===
+2025-01-12 21:57:52 - Nama file: 1736693524141.jpg
+2025-01-12 21:57:52 - Ukuran data base64: 46567 bytes
+2025-01-12 21:57:52 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 21:57:52 - Panjang data setelah hapus header: 46544
+2025-01-12 21:57:52 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 21:57:52 - === Selesai proses save base64 ===
+2025-01-12 21:57:52 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:57:52 - Berhasil menulis 34908 bytes
+2025-01-12 21:57:52 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 21:57:52 - MIME type file tersimpan: image/jpeg
+2025-01-12 21:57:52 - Dimensi gambar: 566x566
+2025-01-12 21:57:52 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:57:52 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 21:57:52 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 21:57:52 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 21:57:52 - Memproses file: New Presentation.pptx
+2025-01-12 21:57:52 - Tipe file: powerpoint
+2025-01-12 21:57:52 - IsFolder: tidak
+2025-01-12 21:57:52 - File memiliki konten, menentukan ekstensi...
+2025-01-12 21:57:52 - Ekstensi yang ditentukan: .pptx
+2025-01-12 21:57:52 - Nama file yang akan disimpan: 1736693697692.pptx
+2025-01-12 21:57:52 - === Mulai proses save file ===
+2025-01-12 21:57:52 - Tipe file: powerpoint
+2025-01-12 21:57:52 - Nama file: 1736693697692.pptx
+2025-01-12 21:57:52 - Ukuran konten awal: 39094 bytes
+2025-01-12 21:57:52 - Konten dalam format base64, melakukan decode...
+2025-01-12 21:57:52 - Ukuran base64 setelah split: 39008 bytes
+2025-01-12 21:57:52 - Ukuran setelah decode: 29254 bytes
+2025-01-12 21:57:52 - Berhasil menulis 29254 bytes
+2025-01-12 21:57:52 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.presentationml.presentation
+2025-01-12 21:57:52 - === Selesai proses save file ===
+2025-01-12 21:57:52 - File berhasil disimpan di: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 21:57:52 - File terverifikasi, ukuran: 29254 bytes
+2025-01-12 21:57:52 - Inserting file with path: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 21:57:52 - Berhasil menyimpan/memperbarui data untuk ID: 1736693697692
+2025-01-12 22:04:23 - Memulai proses upload file
+2025-01-12 22:04:23 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 22:04:23 - Jumlah file yang diterima: 3
+2025-01-12 22:04:23 - File #1:
+2025-01-12 22:04:23 - - ID: 1736693430981
+2025-01-12 22:04:23 - - Nama: New Document.docx
+2025-01-12 22:04:23 - - Tipe: word
+2025-01-12 22:04:23 - - IsFolder: tidak
+2025-01-12 22:04:23 - - Ada konten file: ya
+2025-01-12 22:04:23 - - Panjang konten: 21684
+2025-01-12 22:04:23 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:04:23 - File #2:
+2025-01-12 22:04:23 - - ID: 1736693524141
+2025-01-12 22:04:23 - - Nama: New Image.png
+2025-01-12 22:04:23 - - Tipe: image
+2025-01-12 22:04:23 - - IsFolder: tidak
+2025-01-12 22:04:23 - - Ada konten file: ya
+2025-01-12 22:04:23 - - Panjang konten: 46567
+2025-01-12 22:04:23 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 22:04:23 - File #3:
+2025-01-12 22:04:23 - - ID: 1736693697692
+2025-01-12 22:04:23 - - Nama: New Presentation.pptx
+2025-01-12 22:04:23 - - Tipe: powerpoint
+2025-01-12 22:04:23 - - IsFolder: tidak
+2025-01-12 22:04:23 - - Ada konten file: ya
+2025-01-12 22:04:23 - - Panjang konten: 39094
+2025-01-12 22:04:23 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:04:23 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 22:04:23 - Menghapus file gambar: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:04:23 - Menghapus file: D:\Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:04:23 - Database telah dihapus untuk user: 1
+2025-01-12 22:04:23 - Memproses file: New Document.docx
+2025-01-12 22:04:23 - Tipe file: word
+2025-01-12 22:04:23 - IsFolder: tidak
+2025-01-12 22:04:23 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:04:23 - Ekstensi yang ditentukan: .docx
+2025-01-12 22:04:23 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 22:04:23 - === Mulai proses save file ===
+2025-01-12 22:04:23 - Tipe file: word
+2025-01-12 22:04:23 - Nama file: 1736693430981.docx
+2025-01-12 22:04:23 - Ukuran konten awal: 21684 bytes
+2025-01-12 22:04:23 - Konten dalam format base64, melakukan decode...
+2025-01-12 22:04:23 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 22:04:23 - Ukuran setelah decode: 16198 bytes
+2025-01-12 22:04:23 - Berhasil menulis 16198 bytes
+2025-01-12 22:04:23 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 22:04:23 - === Selesai proses save file ===
+2025-01-12 22:04:23 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:04:23 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 22:04:23 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:04:23 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 22:04:23 - Memproses file: New Image.png
+2025-01-12 22:04:23 - Tipe file: image
+2025-01-12 22:04:23 - IsFolder: tidak
+2025-01-12 22:04:23 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:04:23 - Ekstensi original: png
+2025-01-12 22:04:23 - Tipe gambar dari base64: jpeg
+2025-01-12 22:04:23 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 22:04:23 - Ekstensi yang ditentukan: .jpg
+2025-01-12 22:04:23 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 22:04:23 - Ini adalah file gambar
+2025-01-12 22:04:23 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 22:04:23 - === Mulai proses save base64 ===
+2025-01-12 22:04:23 - Nama file: 1736693524141.jpg
+2025-01-12 22:04:23 - Ukuran data base64: 46567 bytes
+2025-01-12 22:04:23 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 22:04:23 - Panjang data setelah hapus header: 46544
+2025-01-12 22:04:23 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 22:04:23 - === Selesai proses save base64 ===
+2025-01-12 22:04:23 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:04:23 - Berhasil menulis 34908 bytes
+2025-01-12 22:04:23 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 22:04:23 - MIME type file tersimpan: image/jpeg
+2025-01-12 22:04:23 - Dimensi gambar: 566x566
+2025-01-12 22:04:23 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:04:23 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 22:04:23 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:04:23 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 22:04:23 - Memproses file: New Presentation.pptx
+2025-01-12 22:04:23 - Tipe file: powerpoint
+2025-01-12 22:04:23 - IsFolder: tidak
+2025-01-12 22:04:23 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:04:23 - Ekstensi yang ditentukan: .pptx
+2025-01-12 22:04:23 - Nama file yang akan disimpan: 1736693697692.pptx
+2025-01-12 22:04:23 - === Mulai proses save file ===
+2025-01-12 22:04:23 - Tipe file: powerpoint
+2025-01-12 22:04:23 - Nama file: 1736693697692.pptx
+2025-01-12 22:04:23 - Ukuran konten awal: 39094 bytes
+2025-01-12 22:04:23 - Konten dalam format base64, melakukan decode...
+2025-01-12 22:04:23 - Ukuran base64 setelah split: 39008 bytes
+2025-01-12 22:04:23 - Ukuran setelah decode: 29254 bytes
+2025-01-12 22:04:23 - Berhasil menulis 29254 bytes
+2025-01-12 22:04:23 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.presentationml.presentation
+2025-01-12 22:04:23 - === Selesai proses save file ===
+2025-01-12 22:04:23 - File berhasil disimpan di: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:04:23 - File terverifikasi, ukuran: 29254 bytes
+2025-01-12 22:04:23 - Inserting file with path: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:04:23 - Berhasil menyimpan/memperbarui data untuk ID: 1736693697692
+2025-01-12 22:05:37 - Memulai proses upload file
+2025-01-12 22:05:37 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 22:05:37 - Jumlah file yang diterima: 3
+2025-01-12 22:05:37 - File #1:
+2025-01-12 22:05:37 - - ID: 1736693430981
+2025-01-12 22:05:37 - - Nama: New Document.docx
+2025-01-12 22:05:37 - - Tipe: word
+2025-01-12 22:05:37 - - IsFolder: tidak
+2025-01-12 22:05:37 - - Ada konten file: ya
+2025-01-12 22:05:37 - - Panjang konten: 21684
+2025-01-12 22:05:37 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:05:37 - File #2:
+2025-01-12 22:05:37 - - ID: 1736693524141
+2025-01-12 22:05:37 - - Nama: New Image.png
+2025-01-12 22:05:37 - - Tipe: image
+2025-01-12 22:05:37 - - IsFolder: tidak
+2025-01-12 22:05:37 - - Ada konten file: ya
+2025-01-12 22:05:37 - - Panjang konten: 46567
+2025-01-12 22:05:37 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 22:05:37 - File #3:
+2025-01-12 22:05:37 - - ID: 1736693697692
+2025-01-12 22:05:37 - - Nama: New Presentation.pptx
+2025-01-12 22:05:37 - - Tipe: powerpoint
+2025-01-12 22:05:37 - - IsFolder: tidak
+2025-01-12 22:05:37 - - Ada konten file: ya
+2025-01-12 22:05:37 - - Panjang konten: 39094
+2025-01-12 22:05:37 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:05:37 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 22:05:37 - Menghapus file gambar: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:05:37 - Menghapus file: D:\Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:05:37 - Database telah dihapus untuk user: 1
+2025-01-12 22:05:37 - Memproses file: New Document.docx
+2025-01-12 22:05:37 - Tipe file: word
+2025-01-12 22:05:37 - IsFolder: tidak
+2025-01-12 22:05:37 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:05:37 - Ekstensi yang ditentukan: .docx
+2025-01-12 22:05:37 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 22:05:37 - === Mulai proses save file ===
+2025-01-12 22:05:37 - Tipe file: word
+2025-01-12 22:05:37 - Nama file: 1736693430981.docx
+2025-01-12 22:05:37 - Ukuran konten awal: 21684 bytes
+2025-01-12 22:05:37 - Konten dalam format base64, melakukan decode...
+2025-01-12 22:05:37 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 22:05:37 - Ukuran setelah decode: 16198 bytes
+2025-01-12 22:05:37 - Berhasil menulis 16198 bytes
+2025-01-12 22:05:37 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 22:05:37 - === Selesai proses save file ===
+2025-01-12 22:05:37 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:05:37 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 22:05:37 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:05:37 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 22:05:37 - Memproses file: New Image.png
+2025-01-12 22:05:37 - Tipe file: image
+2025-01-12 22:05:37 - IsFolder: tidak
+2025-01-12 22:05:37 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:05:37 - Ekstensi original: png
+2025-01-12 22:05:37 - Tipe gambar dari base64: jpeg
+2025-01-12 22:05:37 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 22:05:37 - Ekstensi yang ditentukan: .jpg
+2025-01-12 22:05:37 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 22:05:37 - Ini adalah file gambar
+2025-01-12 22:05:37 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 22:08:37 - Memulai proses upload file
+2025-01-12 22:08:37 - Raw input: [{"id":1736693430981,"name":"New Document.docx","type":"word","size":"15.82 KB","parentId":null,"file":"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,UEsDBBQABgAI...
+2025-01-12 22:08:37 - Jumlah file yang diterima: 3
+2025-01-12 22:08:37 - File #1:
+2025-01-12 22:08:37 - - ID: 1736693430981
+2025-01-12 22:08:37 - - Nama: New Document.docx
+2025-01-12 22:08:37 - - Tipe: word
+2025-01-12 22:08:37 - - IsFolder: tidak
+2025-01-12 22:08:37 - - Ada konten file: ya
+2025-01-12 22:08:37 - - Panjang konten: 21684
+2025-01-12 22:08:37 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:08:37 - File #2:
+2025-01-12 22:08:37 - - ID: 1736693524141
+2025-01-12 22:08:37 - - Nama: New Image.png
+2025-01-12 22:08:37 - - Tipe: image
+2025-01-12 22:08:37 - - IsFolder: tidak
+2025-01-12 22:08:37 - - Ada konten file: ya
+2025-01-12 22:08:37 - - Panjang konten: 46567
+2025-01-12 22:08:37 - - Awal konten: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD...
+2025-01-12 22:08:37 - File #3:
+2025-01-12 22:08:37 - - ID: 1736693697692
+2025-01-12 22:08:37 - - Nama: New Presentation.pptx
+2025-01-12 22:08:37 - - Tipe: powerpoint
+2025-01-12 22:08:37 - - IsFolder: tidak
+2025-01-12 22:08:37 - - Ada konten file: ya
+2025-01-12 22:08:37 - - Panjang konten: 39094
+2025-01-12 22:08:37 - - Awal konten: data:application/vnd.openxmlformats-officedocument...
+2025-01-12 22:08:37 - Menghapus file: D:\Ngorei/uploads/1736693430981.docx
+2025-01-12 22:08:37 - Database telah dihapus untuk user: 1
+2025-01-12 22:08:37 - Memproses file: New Document.docx
+2025-01-12 22:08:37 - Tipe file: word
+2025-01-12 22:08:37 - IsFolder: tidak
+2025-01-12 22:08:37 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:08:37 - Ekstensi yang ditentukan: .docx
+2025-01-12 22:08:37 - Nama file yang akan disimpan: 1736693430981.docx
+2025-01-12 22:08:37 - === Mulai proses save file ===
+2025-01-12 22:08:37 - Tipe file: word
+2025-01-12 22:08:37 - Nama file: 1736693430981.docx
+2025-01-12 22:08:37 - Ukuran konten awal: 21684 bytes
+2025-01-12 22:08:37 - Konten dalam format base64, melakukan decode...
+2025-01-12 22:08:37 - Ukuran base64 setelah split: 21600 bytes
+2025-01-12 22:08:37 - Ukuran setelah decode: 16198 bytes
+2025-01-12 22:08:37 - Berhasil menulis 16198 bytes
+2025-01-12 22:08:37 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+2025-01-12 22:08:37 - === Selesai proses save file ===
+2025-01-12 22:08:37 - File berhasil disimpan di: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:08:37 - File terverifikasi, ukuran: 16198 bytes
+2025-01-12 22:08:37 - Inserting file with path: D:/Ngorei/uploads/1736693430981.docx
+2025-01-12 22:08:37 - Berhasil menyimpan/memperbarui data untuk ID: 1736693430981
+2025-01-12 22:08:37 - Memproses file: New Image.png
+2025-01-12 22:08:37 - Tipe file: image
+2025-01-12 22:08:37 - IsFolder: tidak
+2025-01-12 22:08:37 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:08:37 - Ekstensi original: png
+2025-01-12 22:08:37 - Tipe gambar dari base64: jpeg
+2025-01-12 22:08:37 - Ekstensi yang akan digunakan: .jpg
+2025-01-12 22:08:37 - Ekstensi yang ditentukan: .jpg
+2025-01-12 22:08:37 - Nama file yang akan disimpan: 1736693524141.jpg
+2025-01-12 22:08:37 - Ini adalah file gambar
+2025-01-12 22:08:37 - Awal data base64: data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD
+2025-01-12 22:08:37 - === Mulai proses save base64 ===
+2025-01-12 22:08:37 - Nama file: 1736693524141.jpg
+2025-01-12 22:08:37 - Ukuran data base64: 46567 bytes
+2025-01-12 22:08:37 - Header data: data:image/jpeg;base64,/9j/4AA...
+2025-01-12 22:08:37 - Panjang data setelah hapus header: 46544
+2025-01-12 22:08:37 - Ukuran data setelah decode: 34908 bytes
+2025-01-12 22:08:37 - === Selesai proses save base64 ===
+2025-01-12 22:08:37 - Menyimpan ke: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:08:37 - Berhasil menulis 34908 bytes
+2025-01-12 22:08:37 - Ukuran file tersimpan: 34908 bytes
+2025-01-12 22:08:37 - MIME type file tersimpan: image/jpeg
+2025-01-12 22:08:37 - Dimensi gambar: 566x566
+2025-01-12 22:08:37 - File berhasil disimpan di: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:08:37 - File terverifikasi, ukuran: 34908 bytes
+2025-01-12 22:08:37 - Inserting file with path: D:/Ngorei/uploads/1736693524141.jpg
+2025-01-12 22:08:37 - Berhasil menyimpan/memperbarui data untuk ID: 1736693524141
+2025-01-12 22:08:37 - Memproses file: New Presentation.pptx
+2025-01-12 22:08:37 - Tipe file: powerpoint
+2025-01-12 22:08:37 - IsFolder: tidak
+2025-01-12 22:08:37 - File memiliki konten, menentukan ekstensi...
+2025-01-12 22:08:37 - Ekstensi yang ditentukan: .pptx
+2025-01-12 22:08:37 - Nama file yang akan disimpan: 1736693697692.pptx
+2025-01-12 22:08:37 - === Mulai proses save file ===
+2025-01-12 22:08:37 - Tipe file: powerpoint
+2025-01-12 22:08:37 - Nama file: 1736693697692.pptx
+2025-01-12 22:08:37 - Ukuran konten awal: 39094 bytes
+2025-01-12 22:08:37 - Konten dalam format base64, melakukan decode...
+2025-01-12 22:08:37 - Ukuran base64 setelah split: 39008 bytes
+2025-01-12 22:08:37 - Ukuran setelah decode: 29254 bytes
+2025-01-12 22:08:37 - Berhasil menulis 29254 bytes
+2025-01-12 22:08:37 - MIME type file tersimpan: application/vnd.openxmlformats-officedocument.presentationml.presentation
+2025-01-12 22:08:37 - === Selesai proses save file ===
+2025-01-12 22:08:37 - File berhasil disimpan di: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:08:37 - File terverifikasi, ukuran: 29254 bytes
+2025-01-12 22:08:37 - Inserting file with path: D:/Ngorei/uploads/1736693697692.pptx
+2025-01-12 22:08:37 - Berhasil menyimpan/memperbarui data untuk ID: 1736693697692
